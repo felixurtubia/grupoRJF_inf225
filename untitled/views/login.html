@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ingreso</title>
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<h1 align="center">Sistema de Gestión de Tickets</h1>
+<h1 align="center">Por favor, inicie sesión para ingresar</h1>
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <form action="/login" method="POST">
+            <fieldset>
+                <label>Usuario</label>
+                <div class="form-group">
+                    <input type="text" required name="username" class="form-control" placeholder="username">
+                </div>
+                <label>Password</label>
+                <div class="form-group">
+                    <input type="password" required name="password" class="form-control" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg">Login</button>
+            </fieldset>
+        </form>
+        <hr>
+
+    </div></div>
+</body>
+</html>
