@@ -25,9 +25,16 @@ app.post("/showUser",function (req,res) {
 });
 
 app.get("/showUser",function (req,res) {
-    if(req.session.name!=null) {
+    if(req.session.permiso=="ADMIN") {
         res.render("showUser.html")
     }else{
+        res.render('login.html')
+    }
+});
+app.get("/showTicket",function () {
+    if(req.session.name!=null){
+        res.render("showTicket.html")
+    } else {
         res.render('login.html')
     }
 });
@@ -104,12 +111,14 @@ app.get("/login",function (req,res) {
 });
 
 app.post("/login", function (req,res) {
-    if(req.body.username!=="admin") {
+    if(req.body.email!=="admin") {
         try {
-            models.User.find({where: {username: req.body.username}}).then(function (user) {
+            models.User.find({where: {email: req.body.email}}).then(function (user) {
                 if (user !== null) {
                     if (req.body.password == user.password) {
-                        req.session.name = user.username;
+                        req.session.name = user.nombre;
+                        req.session.apellido = user.apellido;
+                        req.session.email = user.email;
                         req.session.UserId = user.id;
                         req.session.permiso = user.permiso;
                         req.session.save();

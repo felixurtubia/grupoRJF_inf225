@@ -34,7 +34,9 @@ router.get("/usuarios", function (req,res) {
 //Crear usuario
 router.post("/usuarios", function (req,res) {
     models.User.create({
-        username: req.body.username,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email:req.body.email,
         password: req.body.password,
         permiso: req.body.permiso
     }).then(function (result) {
@@ -82,6 +84,33 @@ router.post('/usuarios/:id',function(req,res) {
                 res.json(user);
             })
         })
+    }
+});
+
+//Crear Ticket
+router.post("/tickets", function (req,res) {
+    models.Ticket.create({
+        asunto: req.body.asunto,
+        comentario: req.body.comentario,
+        prioridad:req.body.prioridad,
+        clasificacion: req.body.clasificacion,
+        estado: "no validado",
+        creador: req.session.name,
+        UserId: req.session.UserId
+    }).then(function (result) {
+        res.redirect("/");
+    });
+});
+
+//Obtener tickets
+router.get("/tickets", function (req,res) {
+    if (req.session.name != null) {
+        models.Ticket.findAll().then(function (tickets) {
+            res.json(tickets);
+        })
+    }
+    else {
+        res.redirect("/");
     }
 });
 

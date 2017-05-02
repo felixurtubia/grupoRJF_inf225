@@ -27,9 +27,13 @@
         <form action="/api/usuarios" method="POST">
             <fieldset>
                 <label>Nombre de Usuario</label>
-                <input type="text" required name = "username" placeholder="Ej: Felix Leon Guzman" class="form-control input-lg text-center">
+                <input type="text" required name = "nombre" placeholder="Ej: Juan" class="form-control text-center">
+                <label>Apellido</label>
+                <input type="text" required name="apellido" placeholder="Ej: Leon Guzman" class="form-control text-center">
+                <label>Correo</label>
+                <input type="text" required name="email" placeholder="ejemplo@gmail.com" class="form-control text-center">
                 <label>Contraseña</label>
-                <input type="password" required name = "password" class="form-control input-lg text-center">
+                <input type="password" required name ="password" class="form-control text-center">
                 <div>
                     <label>Permiso</label>
                     <select class="form-control input-lg text-center" id="permiso" name="permiso">

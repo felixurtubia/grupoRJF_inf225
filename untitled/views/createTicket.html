@@ -24,22 +24,33 @@
 </nav>
 <div id="todo-form" class="row">
     <div class="col-sm-8 col-sm-offset-2 text-center">
-        <form action="/api/usuarios" method="POST">
+        <form action="/api/tickets" method="POST">
             <fieldset>
-                <label>Nombre de Ticket</label>
-                <input type="text" required name = "username" placeholder="Ej: Falla en el sector 1" class="form-control input-lg text-center">
-
+                <label for="asunto">Asunto de Ticket</label>
+                <input type="text" id="asunto" required name="asunto" placeholder="Asunto de Ticket" class="form-control text-center">
+                <label for="comentario">Comentario de Ticket</label>
+                <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="10" placeholder="Comentario"></textarea>
                 <div>
-                    <label>Clasificacion</label>
-                    <select class="form-control input-lg text-center" id="clasificacion" name="clasificacion">
-                        <option value="FALLA" >FALLA</option>
-                        <option value="AMENAZA">AMENAZA</option>
-                        <option value="ATAQUE">ATAQUE</option>
-                        <option value="SITUACION">SITUACION</option>
+                    <label for="prioridad">Prioridad de Ticket</label>
+                    <select class="form-control text-center" id="prioridad" name="prioridad">
+                        <option value="Insignificante" >Insignificante</option>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Urgente">Urgente</option>
                     </select>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-success btn-lg" >Enviar a supervisión</button>
+                    <label for="clasificacion">Clasificacion</label>
+                    <select class="form-control text-center" id="clasificacion" name="clasificacion">
+                        <option value="Falla" >FALLA</option>
+                        <option value="Amenaza">AMENAZA</option>
+                        <option value="Ataque">ATAQUE</option>
+                        <option value="Situacion">SITUACION</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success" >Enviar a supervisión</button>
                 </div>
             </fieldset>
         </form>

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="userApp">
+<html lang="en" ng-app="ticketApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Usuarios registrados</title>
+    <title>Tickets existentes</title>
 
     <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="/userController.js"></script>
+    <script src="/ticketController.js"></script>
 
 </head>
-<body ng-controller="UserController">
+<body ng-controller="TicketController">
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -30,24 +30,27 @@
     </div>
 </nav>
 <div class="container">
-    <h1>Lista de usuarios</h1>
+    <h1>Lista de Tickets</h1>
     <table class="table">
         <thead>
         <tr>
             <th> ID </th>
-            <th> Nombre </th>
-            <th> Correo </th>
-            <th> Permiso </th>
-            <th> Acciones </th>
+            <th> Asunto </th>
+            <th> Comentario </th>
+            <th> Prioridad </th>
+            <th> Clasificacion </th>
+            <th> Estado </th>
         </tr>
         </thead>
-        <tbody ng-repeat="user in users">
+        <tbody ng-repeat="ticket in tickets">
         <tr>
-            <td>{{user.id}}</td>
-            <td>{{user.nombre}} {{user.apellido}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.permiso}}</td>
-            <td>
+            <td>{{ticket.id}}</td>
+            <td>{{ticket.asunto}} </td>
+            <td>{{ticket.comentario}}</td>
+            <td>{{ticket.prioridad}}</td>
+            <td>{{ticket.clasificacion}}</td>
+            <td>{{ticket.estado}}</td>
+ <!--           <td>
                 <form action="/modificar" method="POST">
                     <input type="hidden" value="{{user.id}}" name="id">
                     <input type="submit" value="Modificar" class="btn btn-warning btn-xs">
@@ -60,7 +63,7 @@
                     Eliminar
                 </button>
 
-            </td>
+            </td>-->
         </tr>
         </tbody>
     </table>

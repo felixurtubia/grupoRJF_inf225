@@ -9,7 +9,7 @@ var opts ={
     }
 }
 
-var sequelize = new Sequelize("Ticket",'root','Jagex123',opts);
+var sequelize = new Sequelize("Ticket",'root','cde56fgh76',opts);
 var db = {};
 
 fs  .readdirSync(__dirname)
