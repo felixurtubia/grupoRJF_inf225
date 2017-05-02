@@ -31,7 +31,7 @@ app.get("/showUser",function (req,res) {
         res.render('login.html')
     }
 });
-app.get("/showTicket",function () {
+app.get("/showTicket",function (req,res) {
     if(req.session.name!=null){
         res.render("showTicket.html")
     } else {

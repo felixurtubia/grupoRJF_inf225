@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0a99e8-422e-4df3-bb9f-2d49b398c358" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/untitled/angular/ticketController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/untitled/views/showTicket.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/models/index.js" afterPath="$PROJECT_DIR$/untitled/models/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/models/ticket.js" afterPath="$PROJECT_DIR$/untitled/models/ticket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/models/user.js" afterPath="$PROJECT_DIR$/untitled/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/routes/api.js" afterPath="$PROJECT_DIR$/untitled/routes/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/routes/router.js" afterPath="$PROJECT_DIR$/untitled/routes/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/createTicket.html" afterPath="$PROJECT_DIR$/untitled/views/createTicket.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/createUser.html" afterPath="$PROJECT_DIR$/untitled/views/createUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/index.html" afterPath="$PROJECT_DIR$/untitled/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/login.html" afterPath="$PROJECT_DIR$/untitled/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/showUser.html" afterPath="$PROJECT_DIR$/untitled/views/showUser.html" />
     </list>
     <ignored path="grupoRJF_inf225.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -91,12 +79,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/untitled/routes/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1228">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="183">
+              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+              <folding>
+                <element signature="e#2423#3773#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,11 +116,11 @@
         <option value="$PROJECT_DIR$/untitled/views/index.html" />
         <option value="$PROJECT_DIR$/untitled/models/ticket.js" />
         <option value="$PROJECT_DIR$/untitled/views/showUser.html" />
-        <option value="$PROJECT_DIR$/untitled/routes/router.js" />
         <option value="$PROJECT_DIR$/untitled/routes/api.js" />
         <option value="$PROJECT_DIR$/untitled/views/createTicket.html" />
         <option value="$PROJECT_DIR$/untitled/angular/ticketController.js" />
         <option value="$PROJECT_DIR$/untitled/views/showTicket.html" />
+        <option value="$PROJECT_DIR$/untitled/routes/router.js" />
       </list>
     </option>
   </component>
@@ -369,12 +359,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493700850632</updated>
-      <workItem from="1493700855336" duration="5471000" />
+      <workItem from="1493700855336" duration="5661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5471000" />
+    <option name="totallyTimeSpent" value="5661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
@@ -478,14 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/routes/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1228">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/views/createTicket.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -551,6 +533,16 @@
         <state relative-caret-position="360">
           <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/routes/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+          <folding>
+            <element signature="e#2423#3773#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
