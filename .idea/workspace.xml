@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0a99e8-422e-4df3-bb9f-2d49b398c358" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/routes/router.js" afterPath="$PROJECT_DIR$/untitled/routes/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/angular/ticketController.js" afterPath="$PROJECT_DIR$/untitled/angular/ticketController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/index.html" afterPath="$PROJECT_DIR$/untitled/views/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/showTicket.html" afterPath="$PROJECT_DIR$/untitled/views/showTicket.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled/views/showUser.html" afterPath="$PROJECT_DIR$/untitled/views/showUser.html" />
     </list>
     <ignored path="grupoRJF_inf225.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +41,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+            <state relative-caret-position="426">
+              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -58,8 +61,8 @@
       <file leaf-file-name="ticketController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/angular/ticketController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="1935">
+              <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -82,11 +85,9 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/untitled/routes/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-              <folding>
-                <element signature="e#2423#3773#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,8 +95,38 @@
       <file leaf-file-name="showTicket.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/untitled/views/showTicket.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="246">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showUser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/untitled/views/showUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/untitled/views/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createTicket.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/untitled/views/createTicket.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="50" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -113,14 +144,14 @@
         <option value="$PROJECT_DIR$/untitled/views/login.html" />
         <option value="$PROJECT_DIR$/untitled/models/user.js" />
         <option value="$PROJECT_DIR$/untitled/views/createUser.html" />
-        <option value="$PROJECT_DIR$/untitled/views/index.html" />
         <option value="$PROJECT_DIR$/untitled/models/ticket.js" />
-        <option value="$PROJECT_DIR$/untitled/views/showUser.html" />
         <option value="$PROJECT_DIR$/untitled/routes/api.js" />
         <option value="$PROJECT_DIR$/untitled/views/createTicket.html" />
+        <option value="$PROJECT_DIR$/untitled/routes/router.js" />
         <option value="$PROJECT_DIR$/untitled/angular/ticketController.js" />
         <option value="$PROJECT_DIR$/untitled/views/showTicket.html" />
-        <option value="$PROJECT_DIR$/untitled/routes/router.js" />
+        <option value="$PROJECT_DIR$/untitled/views/showUser.html" />
+        <option value="$PROJECT_DIR$/untitled/views/index.html" />
       </list>
     </option>
   </component>
@@ -131,9 +162,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="805" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -293,6 +323,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -359,15 +390,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493700850632</updated>
-      <workItem from="1493700855336" duration="5661000" />
+      <workItem from="1493700855336" duration="9944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5661000" />
+    <option name="totallyTimeSpent" value="9944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="805" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -400,18 +431,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/untitled/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-732">
@@ -444,14 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/views/showUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -464,30 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/views/createTicket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/views/showTicket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/angular/userController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -512,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/untitled/angular/ticketController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -528,21 +513,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/views/createTicket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="50" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/angular/ticketController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/angular/userController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/views/showTicket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/views/showUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/untitled/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        <state relative-caret-position="426">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/untitled/routes/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-          <folding>
-            <element signature="e#2423#3773#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="167">
+          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

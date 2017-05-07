@@ -48,15 +48,15 @@
             <td>{{user.email}}</td>
             <td>{{user.permiso}}</td>
             <td>
-                <form action="/modificar" method="POST">
+                <form action="#" method="POST">
                     <input type="hidden" value="{{user.id}}" name="id">
                     <input type="submit" value="Modificar" class="btn btn-warning btn-xs">
                 </form>
-                <form action="/usuarios" method="POST">
+                <form action="#" method="POST">
                     <input type="hidden" value="{{user.id}}" name="id">
                     <input type="submit" value="Ver actividad" class="btn btn-warning btn-xs">
                 </form>
-                <button ng-click="delete(user.id)" class="btn btn-danger btn-xs">
+                <button ng-click="#" class="btn btn-danger btn-xs">
                     Eliminar
                 </button>
 
