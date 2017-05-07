@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Marine" version="4">
+  <OBJECT>
+    <ID name="Marine" mc="Standard.Project" uid="6f98796b-dc06-4404-bc60-1c851731ea98"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Marine]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="marine" mc="Standard.Package" uid="c0d7bfb6-5c38-480f-999f-50dd0c6f64d8"/>
+        <COMPID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Marine" mc="Infrastructure.DiagramSet" uid="a9aaf2bd-579a-40cc-a009-b22684672706"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="marine" version="4">
+  <OBJECT>
+    <ID name="marine" mc="Standard.Package" uid="c0d7bfb6-5c38-480f-999f-50dd0c6f64d8"/>
+    <PID name="Marine" mc="Standard.Project" uid="6f98796b-dc06-4404-bc60-1c851731ea98"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[marine]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Usuario" mc="Standard.Class" uid="46fb0bbf-d830-4991-95af-bf9e652cee4d"/>
+        <COMPID name="Operador" mc="Standard.Class" uid="1207f4b5-6644-4176-a2aa-0ffa58cda0fa"/>
+        <COMPID name="Supervisor" mc="Standard.Class" uid="74445727-ae00-4cb6-8fd9-d90557ee9d3b"/>
+        <COMPID name="Jefe" mc="Standard.Class" uid="1d88b544-b671-487b-b166-ae69085fada9"/>
+        <COMPID name="Administrador" mc="Standard.Class" uid="05756784-1172-46dc-a1c1-574fdc830f79"/>
+        <COMPID name="Ticket" mc="Standard.Class" uid="0f9c136e-1ec6-4d9f-b59f-527c4dacb25e"/>
+        <COMPID name="Keyword" mc="Standard.Class" uid="cc3d2a05-d60c-4f8c-a3e3-4860b933a0e5"/>
+        <COMPID name="Mensaje" mc="Standard.Class" uid="36162dfc-68d9-4aa7-96c6-281e52e534af"/>
+        <COMPID name="Data" mc="Standard.Class" uid="9c5611c6-08f6-4492-84dc-0fd1e72b1691"/>
+        <COMPID name="Estadistica" mc="Standard.Class" uid="67001f07-362b-4148-857e-0a516c4c85e5"/>
+        <COMPID name="Relacionar ticket" mc="Standard.UseCase" uid="8567cdf3-fb44-4890-98ae-6d3f59ad4bc1"/>
+        <COMPID name="Modificar, eliminar y cerrar ticket" mc="Standard.UseCase" uid="86f47b2f-85b3-4435-b0e7-d321f3ca652f"/>
+        <COMPID name="Elevar solicitud" mc="Standard.UseCase" uid="f5c86f01-702f-4332-803b-0406081fa627"/>
+        <COMPID name="Asignar ticket" mc="Standard.UseCase" uid="8a636f1e-8e7b-4e93-8de3-53c6d6690998"/>
+        <COMPID name="Alimentar ticket con data y mensaje" mc="Standard.UseCase" uid="572cc6b2-5e5b-4abc-b2ba-456e2072ffed"/>
+        <COMPID name="Crear tickets" mc="Standard.UseCase" uid="cfc64f16-d168-4390-ba69-b9adb1caedae"/>
+        <COMPID name="Ver estadisticas" mc="Standard.UseCase" uid="396f9d36-82f9-4532-bb9a-b5ca7fb74b46"/>
+        <COMPID name="CRUD Usuario" mc="Standard.UseCase" uid="1f71af21-fdf9-4c5d-8aeb-53c41d8f02c0"/>
+        <COMPID name="Jefe" mc="Standard.Actor" uid="8efe787e-6bfe-4b79-84cf-7c73a5dc4094"/>
+        <COMPID name="Supervisor" mc="Standard.Actor" uid="7a43b65b-ca1b-449a-8641-f67a73a56b85"/>
+        <COMPID name="Operador" mc="Standard.Actor" uid="bff9c614-15fa-47b7-a094-8c37da818859"/>
+        <COMPID name="Administrador" mc="Standard.Actor" uid="591bfee6-c668-4f95-9551-7130132f30ba"/>
+        <COMPID name="Operador" mc="Standard.Actor" uid="23186e59-2a89-4a50-835e-756a6216c1d6"/>
+        <COMPID name="Informantes" mc="Standard.Actor" uid="56e00227-83b9-4559-9408-0ed7f86ada8f"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="marine Use Case diagram" mc="Standard.UseCaseDiagram" uid="b7e0f954-8422-4717-8910-f456b620db56"/>
+        <COMPID name="marine Class diagram" mc="Standard.ClassDiagram" uid="6148f3f6-7b91-4ee5-bb01-8068b0de6c0e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
