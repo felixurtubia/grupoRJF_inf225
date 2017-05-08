@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Controlador" version="4">
+  <OBJECT>
+    <ID name="Controlador" mc="Standard.Package" uid="b0b6e15a-7b84-407c-8d25-1ea5a4d12e97"/>
+    <PID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Controlador]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="controladorEstadisticas" mc="Standard.Class" uid="424edd89-fc89-4eda-808e-38bcd4c63bfc"/>
+        <COMPID name="controladorTicket" mc="Standard.Class" uid="5a870a5b-4d5e-4286-a48f-22b6bf2d05ff"/>
+        <COMPID name="controladorUsuarios" mc="Standard.Class" uid="42a5f878-e08a-4f8c-a20b-b039ba45aa65"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

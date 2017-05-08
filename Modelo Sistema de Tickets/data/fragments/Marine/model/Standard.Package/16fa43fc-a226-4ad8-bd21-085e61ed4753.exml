@@ -26,6 +26,8 @@
         <COMPID name="Data" mc="Standard.Class" uid="4f5967a3-831b-49ac-bdc0-43b979639ace"/>
         <COMPID name="Mensaje" mc="Standard.Class" uid="83d2d56d-3fe3-461e-9561-b409a95a2fc8"/>
         <COMPID name="Archivo" mc="Standard.Class" uid="6c4137aa-3ef5-4a1d-b670-7973dde76db1"/>
+        <COMPID name="vistas" mc="Standard.Package" uid="32a1d0cf-4f19-41cd-b2b1-6386bc3738f2"/>
+        <COMPID name="Controlador" mc="Standard.Package" uid="b0b6e15a-7b84-407c-8d25-1ea5a4d12e97"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="diagrama de clase Class diagram" mc="Standard.ClassDiagram" uid="865a73f3-7686-43ee-89dd-2e81cd43d0a7"/>
