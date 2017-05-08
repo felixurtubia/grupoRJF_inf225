@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Registro" version="4">
   <OBJECT>
     <ID name="Registro" mc="Standard.Class" uid="da6a5aa7-ffa2-427f-ad3c-10484e71a367"/>
-    <PID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+    <PID name="Observer" mc="Standard.Package" uid="8f356cf7-5031-4711-a7ee-351b2b806434"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="marine" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Casos de Uso, Modelo de Dominio" version="4">
   <OBJECT>
-    <ID name="marine" mc="Standard.Package" uid="c0d7bfb6-5c38-480f-999f-50dd0c6f64d8"/>
+    <ID name="Casos de Uso, Modelo de Dominio" mc="Standard.Package" uid="c0d7bfb6-5c38-480f-999f-50dd0c6f64d8"/>
     <PID name="Marine" mc="Standard.Project" uid="6f98796b-dc06-4404-bc60-1c851731ea98"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
@@ -9,7 +9,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[marine]]></ATT>
+      <ATT name="Name"><![CDATA[Casos de Uso, Modelo de Dominio]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>

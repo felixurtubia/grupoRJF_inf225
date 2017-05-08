@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Sesion" version="4">
   <OBJECT>
     <ID name="Sesion" mc="Standard.Class" uid="f6d7c8ae-50c9-4d1c-82e5-bf58ccaca31e"/>
-    <PID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+    <PID name="Observer" mc="Standard.Package" uid="8f356cf7-5031-4711-a7ee-351b2b806434"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

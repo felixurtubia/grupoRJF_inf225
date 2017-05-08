@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Keyword" version="4">
   <OBJECT>
     <ID name="Keyword" mc="Standard.Class" uid="ed6a2d15-7efd-4664-92db-adf5ddcb8c55"/>
-    <PID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+    <PID name="Modelo" mc="Standard.Package" uid="e04150cd-6ee9-4e5c-bebf-8957bd3d6794"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

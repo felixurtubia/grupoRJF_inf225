@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Observer" version="4">
+  <OBJECT>
+    <ID name="Observer" mc="Standard.Package" uid="8f356cf7-5031-4711-a7ee-351b2b806434"/>
+    <PID name="Modelo" mc="Standard.Package" uid="e04150cd-6ee9-4e5c-bebf-8957bd3d6794"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Observer]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Registro" mc="Standard.Class" uid="da6a5aa7-ffa2-427f-ad3c-10484e71a367"/>
+        <COMPID name="Observador" mc="Standard.Class" uid="1522ad0a-e619-4968-bf25-1c59d0687ab3"/>
+        <COMPID name="Sesion" mc="Standard.Class" uid="f6d7c8ae-50c9-4d1c-82e5-bf58ccaca31e"/>
+        <COMPID name="Accion" mc="Standard.Class" uid="ab409800-c27b-492f-b96d-99979d3adb70"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Modelo" version="4">
+  <OBJECT>
+    <ID name="Modelo" mc="Standard.Package" uid="e04150cd-6ee9-4e5c-bebf-8957bd3d6794"/>
+    <PID name="diagrama de clase" mc="Standard.Package" uid="16fa43fc-a226-4ad8-bd21-085e61ed4753"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Modelo]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Guardia" mc="Standard.Class" uid="25eb945d-625d-4e92-aa17-6bb39f79229b"/>
+        <COMPID name="Usuario" mc="Standard.Class" uid="a73350d6-ceda-4588-b3ad-529cf4f9a503"/>
+        <COMPID name="Ticket" mc="Standard.Class" uid="7af4efb8-7646-4f8d-bb31-c6a61b05dd96"/>
+        <COMPID name="Vinculo" mc="Standard.Class" uid="16c3007d-f74f-4ce0-8a33-32cc1aa43095"/>
+        <COMPID name="Keyword" mc="Standard.Class" uid="ed6a2d15-7efd-4664-92db-adf5ddcb8c55"/>
+        <COMPID name="Data" mc="Standard.Class" uid="4f5967a3-831b-49ac-bdc0-43b979639ace"/>
+        <COMPID name="Mensaje" mc="Standard.Class" uid="83d2d56d-3fe3-461e-9561-b409a95a2fc8"/>
+        <COMPID name="Archivo" mc="Standard.Class" uid="6c4137aa-3ef5-4a1d-b670-7973dde76db1"/>
+        <COMPID name="Observer" mc="Standard.Package" uid="8f356cf7-5031-4711-a7ee-351b2b806434"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
