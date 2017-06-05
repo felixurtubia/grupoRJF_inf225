@@ -1,0 +1,81 @@
+{% extends 'ticket/operador/base.html' %}
+{% block title %}Ticket Detail{% endblock %}
+{% block tickets_active %}active{% endblock %}
+{% block mis_tickets_active %}active {% endblock %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>{{ ticket.titulo }} <small>{{ ticket.prioridad }}</small></h1>
+                    <h3>Asunto: {{ ticket.asunto }}</h3>
+                    <h3>Contenido: {{ ticket.contenido }}</h3>
+                    <h4>Creador: {{ ticket.creador }}</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">View All</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3>Toda la data</h3>
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Data</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for tdata in ticket.textdata_set.all %}
+                            <tr>
+                                <td>{{ tdata }}</td>
+                                <td>{{ tdata.data_text }}<td>
+                            </tr>
+                        {% endfor %}
+                        {% for fdata in ticket.filedata_set.all %}
+                            <tr>
+                                <td>{{ fdata }}</td>
+                                <td>
+                                    <a target="_blank" href="{{ fdata.data_file.url }}">
+                                        <button type="button" class="btn btn-success btn-xs">
+                                            <span class="glyphicon glyphicon-play"></span>&nbsp; Download
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
