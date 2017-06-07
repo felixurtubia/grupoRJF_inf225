@@ -52,11 +52,24 @@
                         {% csrf_token %}
                             <select required name="user">
                                 {% for operador in operadores %}
-                                    <option value={{ operador.id }}>{{ operador.first_name }}</option>
+                                    <option value={{ operador.id }}>{{ operador.empleado }}</option>
                                 {% endfor %}
                             </select>
                         <input type="hidden" name="ticket" value={{ ticket.id }}>
                         <button  type="submit" >Asignar</button>
+                    </form>
+                    </li>
+                {% else %}
+                    <li>
+                    <form action="{% url 'ticket:asignar_ticket' %}" method="post">
+                        {% csrf_token %}
+                            <select required name="user">
+                                {% for operador in operadores %}
+                                    <option value={{ operador.id }}>{{ operador.empleado }}</option>
+                                {% endfor %}
+                            </select>
+                        <input type="hidden" name="ticket" value={{ ticket.id }}>
+                        <button  type="submit" >Re asignar</button>
                     </form>
                     </li>
                 {% endif %}
@@ -77,9 +90,7 @@
                         <tr>
                             <th>Titulo</th>
                             <th>Contenido</th>
-                            {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
-                                <th>Visar</th>
-                            {% endif %}
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -94,13 +105,13 @@
                                 {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
                                     <td>
                                     {% if not tdata.visada %}
-                                        <a href="{% url 'ticket:visar_data' tdata.id ticket.id %}">
+                                        <a href="{% url 'ticket:visar_data_text' tdata.id ticket.id %}">
                                             <button type="button" class="btn btn-success btn-xs">
                                                 <span class="glyphicon glyphicon-ok-sign"></span>
                                             </button>
                                         </a>
                                     {% else %}
-                                        <a href="{% url 'ticket:no_visar_data' tdata.id ticket.id %}">
+                                        <a href="{% url 'ticket:no_visar_data_text' tdata.id ticket.id %}">
                                             <button type="button" class="btn btn-success btn-xs">
                                                 <span class="glyphicon glyphicon-remove-sign"></span>
                                             </button>
@@ -111,7 +122,11 @@
                             </tr>
                         {% endfor %}
                         {% for fdata in ticket.filedata_set.all %}
-                            <tr>
+                            <tr {% if fdata.visada %}
+                            style="background-color:#BFF2A7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
                                 <td>{{ fdata }}</td>
                                 <td>
                                     <a target="_blank" href="{{ fdata.data_file.url }}">
@@ -120,6 +135,23 @@
                                         </button>
                                     </a>
                                 </td>
+                            {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                                    <td>
+                                    {% if not fdata.visada %}
+                                        <a href="{% url 'ticket:visar_data_file' fdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-ok-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'ticket:no_visar_data_file' fdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% endif %}
+                                    </td>
+                                {% endif %}
 
                             </tr>
                         {% endfor %}

@@ -162,44 +162,68 @@ def restaurar(request, ticket_id):
             return redirect('ticket:index')
 
 
-def visar(request, data_id, ticket_id):
+def visar_text(request, data_id, ticket_id):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        try:
-            data = TextData.objects.get(pk=data_id)
-        except:
-            data = FileData.objects.get(pk=data_id)
-        finally :
-            if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
-                ticket = get_object_or_404(Ticket, pk=ticket_id)
-                data.visada = True
-                data.save()
-                operadores = User.objects.filter(empleado__perfil='operador')
-                return render(request, 'ticket/supervisor/detail.html',
-                              {'ticket': ticket, 'operadores': operadores, 'user': request.user})
-            else:
-                return redirect('ticket:index')
+        data = get_object_or_404(TextData, pk=data_id)
+        if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            data.visada = True
+            data.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
 
 
-def no_visar(request, data_id, ticket_id):
+def no_visar_text(request, data_id, ticket_id):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        try:
-            data = TextData.objects.get(pk=data_id)
-        except:
-            data = FileData.objects.get(pk=data_id)
-        finally:
-            if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
-                ticket = get_object_or_404(Ticket, pk=ticket_id)
-                data.visada = False
-                data.save()
-                operadores = User.objects.filter(empleado__perfil='operador')
-                return render(request, 'ticket/supervisor/detail.html',
-                              {'ticket': ticket, 'operadores': operadores, 'user': request.user})
-            else:
-                return redirect('ticket:index')
+        data = get_object_or_404(TextData,pk=data_id)
+        if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            data.visada = False
+            data.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def visar_file(request, data_id, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        data = get_object_or_404(FileData, pk=data_id)
+        if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            data.visada = True
+            data.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def no_visar_file(request, data_id, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        data = get_object_or_404(FileData, pk=data_id)
+        if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            data.visada = False
+            data.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
 
 
 def create_ticket(request):

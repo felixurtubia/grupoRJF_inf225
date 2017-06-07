@@ -13,7 +13,7 @@ class Empleado(models.Model):
     direccion = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.user.first_name + self.user.last_name
+        return self.user.first_name + " " + self.user.last_name
 
 
 class Guardia(models.Model):
