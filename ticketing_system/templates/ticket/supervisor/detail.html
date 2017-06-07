@@ -11,11 +11,17 @@
         <!-- Left Album Info -->
         <div class="col-sm-4 col-md-3">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <h1>{{ ticket.titulo }} <small>{{ ticket.prioridad }}</small></h1>
-                    <h5>Asunto:</h5><br><h4>{{ ticket.asunto }}</h4>
-                    <h3>Contenido: <br>{{ ticket.contenido }}</h3>
-                    <h4>Creador: <br>{{ ticket.creador }}</h4>
+                <div class="panel-body" {% if ticket.prioridad == 'baja' %}
+                            style="background-color:#BFF2A7"
+                        {% elif ticket.prioridad == 'estandar' %}
+                            style="background-color:#F2EFA7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
+                    <h2>{{ ticket.titulo }} <br><small>{{ ticket.fecha_apertura|date:"d M Y" }}</small></h2>
+                    {% if ticket.asunto %}<h5>Asunto:</h5><br><h4>{{ ticket.asunto }}</h4><br>{% endif %}
+                    {% if ticket.contenido %}<h5>Contenido:</h5><br><h4>{{ ticket.contenido }}</h4><br>{% endif %}
+                    <h5>Encargado:</h5><br><h4>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</h4>
 
                 </div>
             </div>
@@ -26,23 +32,35 @@
 
             <ul class="nav nav-pills" style="margin-bottom: 10px;">
                 <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">View All</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+                {% if not ticket.cerrado %}
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:cerrar' ticket.id %}" style="background-color: #F2EFA7">Cerrar Ticket</a></li>
+                {% endif %}
+                {% if ticket.cerrado %}
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:abrir' ticket.id %}" style="background-color: #F2EFA7">Abrir Ticket</a></li>
+                {% endif %}
+                {% if not ticket.eliminado %}
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:eliminar' ticket.id %}" style="background-color:#F2B2A7">Eliminar Ticket</a></li>
+                {% endif %}
+                {% if ticket.eliminado %}
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:restaurar' ticket.id %}" style="background-color:#F2B2A7">Restaurar Ticket</a></li>
+                {% endif %}
                 {% if not ticket.asignado %}
+                    <li>
                     <form action="{% url 'ticket:asignar_ticket' %}" method="post">
                         {% csrf_token %}
-                        <li role="presentation" class="active">
                             <select required name="user">
                                 {% for operador in operadores %}
                                     <option value={{ operador.id }}>{{ operador.first_name }}</option>
                                 {% endfor %}
                             </select>
-                        </li>
                         <input type="hidden" name="ticket" value={{ ticket.id }}>
-                        <li role="presentation" class="active"><button  type="submit" >Asignar</button> </li>
+                        <button  type="submit" >Asignar</button>
                     </form>
-
+                    </li>
                 {% endif %}
+
             </ul>
 
             <div class="panel panel-default">
@@ -59,13 +77,37 @@
                         <tr>
                             <th>Titulo</th>
                             <th>Contenido</th>
+                            {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                                <th>Visar</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
                         {% for tdata in ticket.textdata_set.all %}
-                            <tr>
+                            <tr {% if tdata.visada %}
+                            style="background-color:#BFF2A7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
                                 <td>{{ tdata }}</td>
                                 <td>{{ tdata.data_text }}<td>
+                                {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                                    <td>
+                                    {% if not tdata.visada %}
+                                        <a href="{% url 'ticket:visar_data' tdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-ok-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'ticket:no_visar_data' tdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% endif %}
+                                    </td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         {% for fdata in ticket.filedata_set.all %}
@@ -78,6 +120,7 @@
                                         </button>
                                     </a>
                                 </td>
+
                             </tr>
                         {% endfor %}
                         </tbody>

@@ -20,6 +20,7 @@
                         <th>Asunto</th>
                         <th>Prioridad</th>
                         <th>Creador</th>
+                        <th>Encargado</th>
                         <th>Detalles</th>
                     </tr>
                     </thead>
@@ -30,6 +31,7 @@
                             <td>{{ ticket.asunto }}</td>
                             <td>{{ ticket.prioridad }}</td>
                             <td>{{ ticket.creador.first_name }}</td>
+                            <td>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</td>
                             <td><a href="{% url 'ticket:detail' ticket.id %}" class="btn btn-primary btn-sm" role="button">Ver Detalles</a></td>
                         </tr>
                     {% endfor %}

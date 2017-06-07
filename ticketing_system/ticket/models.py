@@ -29,14 +29,14 @@ class Guardia(models.Model):
 
 class Ticket(models.Model):
     titulo = models.CharField(max_length=300)
-    asunto = models.CharField(max_length=500)
-    contenido = models.CharField(max_length=500)
+    asunto = models.CharField(max_length=500, null=True)
+    contenido = models.CharField(max_length=500, null=True)
     prioridad = models.CharField(max_length=15, choices=(('urgente', 'urgente'), ('estandar', 'estandar'),
                                                          ('baja', 'baja')))
     impacto = models.CharField(max_length=8, null=True)
     direccionamiento = models.CharField(max_length=10, null=True)
     cybersystem = models.CharField(max_length=10, null=True)
-    fecha_apertura = models.DateField(default=datetime.now)
+    fecha_apertura = models.DateField(auto_now_add=True)
     fecha_cierre = models.DateField(null=True)
     # Estados
     cerrado = models.BooleanField(default=False)
@@ -122,6 +122,7 @@ class Keyword(models.Model):
 
 class FileData(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    visada = models.BooleanField(default=False)
     data_title = models.CharField(max_length=250)
     data_file = models.FileField(default='')
 
@@ -131,6 +132,7 @@ class FileData(models.Model):
 
 class TextData(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    visada = models.BooleanField(default=False)
     data_title = models.CharField(max_length=250)
     data_text = models.CharField(max_length=1000)
 

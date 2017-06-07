@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout, models
-from .models import Ticket, Empleado
+from .models import Ticket, Empleado, TextData, FileData
 from django.db.models import Q
 from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm
 from django.contrib.auth.models import User
@@ -12,7 +12,7 @@ def index(request):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        tickets = Ticket.objects.filter(cerrado=False)
+        tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
         return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
 
 
@@ -24,17 +24,18 @@ def detail(request, ticket_id):
         user = request.user
         if str(request.user.empleado.perfil) == 'supervisor':
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
+            return render(request, 'ticket/supervisor/detail.html',
                           {'ticket': ticket, 'operadores': operadores})
         else:
-            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket, 'user':user})
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
+                          {'ticket': ticket, 'user': user})
 
 
 def mis_tickets(request):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        tickets = Ticket.objects.filter(cerrado=False, encargado=request.user)
+        tickets = Ticket.objects.filter(cerrado=False, encargado=request.user, eliminado=False)
         return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
 
 
@@ -43,11 +44,39 @@ def tickets_no_asignados(request):
         return render(request, 'ticket/login.html')
     else:
         if str(request.user.empleado.perfil) == 'supervisor':
-            tickets = Ticket.objects.filter(asignado=False, cerrado=False)
+            tickets = Ticket.objects.filter(asignado=False, cerrado=False, eliminado=False)
             return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
                           {'tickets': tickets})
         else:
-            tickets = Ticket.objects.filter(cerrado=False)
+            tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
+                          {'tickets': tickets})
+
+
+def tickets_cerrados(request):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            tickets = Ticket.objects.filter(cerrado=True, eliminado=False)
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
+                          {'tickets': tickets})
+        else:
+            tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
+                          {'tickets': tickets})
+
+
+def tickets_eliminados(request):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            tickets = Ticket.objects.filter(eliminado=True)
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
+                          {'tickets': tickets})
+        else:
+            tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
             return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html',
                           {'tickets': tickets})
 
@@ -63,11 +92,114 @@ def asignar_ticket(request):
             ticket.asignado = True
             ticket.save()
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
+            return render(request, 'ticket/supervisor/detail.html',
                           {'ticket': ticket, 'operadores': operadores})
         else:
             return redirect('ticket:index')
 
+
+def cerrar(request, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            ticket.cerrador = request.user
+            ticket.cerrado = True
+            ticket.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def abrir(request, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            ticket.cerrador = None
+            ticket.cerrado = False
+            ticket.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def eliminar(request, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            ticket.eliminador = request.user
+            ticket.eliminado = True
+            ticket.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def restaurar(request, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        if str(request.user.empleado.perfil) == 'supervisor':
+            ticket = get_object_or_404(Ticket, pk=ticket_id)
+            ticket.eliminador = None
+            ticket.eliminado = False
+            ticket.save()
+            operadores = User.objects.filter(empleado__perfil='operador')
+            return render(request, 'ticket/supervisor/detail.html',
+                          {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+        else:
+            return redirect('ticket:index')
+
+
+def visar(request, data_id, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        try:
+            data = TextData.objects.get(pk=data_id)
+        except:
+            data = FileData.objects.get(pk=data_id)
+        finally :
+            if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+                ticket = get_object_or_404(Ticket, pk=ticket_id)
+                data.visada = True
+                data.save()
+                operadores = User.objects.filter(empleado__perfil='operador')
+                return render(request, 'ticket/supervisor/detail.html',
+                              {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+            else:
+                return redirect('ticket:index')
+
+
+def no_visar(request, data_id, ticket_id):
+    if not request.user.is_authenticated():
+        return render(request, 'ticket/login.html')
+    else:
+        try:
+            data = TextData.objects.get(pk=data_id)
+        except:
+            data = FileData.objects.get(pk=data_id)
+        finally:
+            if str(request.user.empleado.perfil) == 'supervisor' or data.ticket.encargado == request.user:
+                ticket = get_object_or_404(Ticket, pk=ticket_id)
+                data.visada = False
+                data.save()
+                operadores = User.objects.filter(empleado__perfil='operador')
+                return render(request, 'ticket/supervisor/detail.html',
+                              {'ticket': ticket, 'operadores': operadores, 'user': request.user})
+            else:
+                return redirect('ticket:index')
 
 
 def create_ticket(request):
@@ -81,7 +213,13 @@ def create_ticket(request):
             ticket.asunto = request.POST['asunto']
             ticket.contenido = request.POST['contenido']
             ticket.save()
-            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket})
+            if str(request.user.empleado.perfil) == 'supervisor':
+                operadores = User.objects.filter(empleado__perfil='operador')
+                return render(request, 'ticket/supervisor/detail.html',
+                              {'ticket': ticket, 'operadores': operadores})
+            else:
+                return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
+                              {'ticket': ticket, 'user': request.user})
         perfil = request.user.empleado.perfil
         extiende = 'ticket/' + str(perfil) + '/base.html'
         context = {
@@ -109,7 +247,7 @@ def create_file_data(request, ticket_id):
             return render(request, 'ticket/' + request.user.empleado.perfil + '/create_data_file.html', context)
 
         data.save()
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket})
+        return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket, 'user': request.user})
     context = {
         'ticket': ticket,
         'form': form,
@@ -125,7 +263,7 @@ def create_text_data(request, ticket_id):
         data.ticket = ticket
         data.data_text = request.POST['data_text']
         data.save()
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket})
+        return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html', {'ticket': ticket, 'user': request.user})
     context = {
         'ticket': ticket,
         'form': form,
@@ -140,7 +278,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                tickets = Ticket.objects.filter(creador=request.user)
+                tickets = Ticket.objects.filter(creador=request.user, eliminado=False, cerrado=False)
                 return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
             else:
                 return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido desabilitada'})
