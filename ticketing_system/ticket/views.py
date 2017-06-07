@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout, models
 from .models import Ticket, Empleado, TextData, FileData
@@ -267,7 +268,7 @@ def create_file_data(request, ticket_id):
             context = {
                 'ticket': ticket,
                 'form': form,
-                'error_message': 'Data file must be pdf, word, excel, jpg, jpeg png',
+                'error_message': 'Tipo de archivo debe ser pdf, word, excel, jpg, jpeg, png',
             }
             return render(request, 'ticket/' + request.user.empleado.perfil + '/create_data_file.html', context)
 
@@ -306,9 +307,9 @@ def login_user(request):
                 tickets = Ticket.objects.filter(creador=request.user, eliminado=False, cerrado=False)
                 return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
             else:
-                return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido desabilitada'})
+                return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido deshabilitada.'})
         else:
-            return render(request, 'ticket/login.html', {'error_message': 'Error en usuario o contraseña'})
+            return render(request, 'ticket/login.html', {'error_message': 'Error en usuario o contraseña.'})
     return render(request, 'ticket/login.html')
 
 

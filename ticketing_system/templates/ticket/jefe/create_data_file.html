@@ -1,5 +1,5 @@
 <{% extends 'ticket/operador/base.html' %}
-{% block title %}Nueva data{% endblock %}
+{% block title %}Nuevo archivo{% endblock %}
 {% block tickets_active %}active{% endblock %}
 {% block mis_tickets_active %}active {% endblock %}
 
@@ -25,15 +25,15 @@
         <div class="col-sm-8 col-md-9">
 
             <ul class="nav nav-pills" style="margin-bottom: 10px;">
-                <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">View All</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">Ver todo</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacipn</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
 
             </ul>
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Agregar nueva Datas</h3>
+                    <h3>Agregar data</h3>
                     {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
                     {% endif %}

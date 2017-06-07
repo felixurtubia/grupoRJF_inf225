@@ -8,8 +8,8 @@ class Empleado(models.Model):
     birth_date = models.DateField
     cargo = models.CharField(max_length=200)
     departamento = models.CharField(max_length=200)
-    perfil = models.CharField(max_length=200, choices=(('operador', 'operador'),
-                                                       ('supervisor', 'supervisor'), ('jefe', 'jefe')))
+    perfil = models.CharField(max_length=200, choices=(('operador', 'Operador'),
+                                                       ('supervisor', 'Supervisor'), ('jefe', 'Jefe')))
     direccion = models.CharField(max_length=200)
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Guardia(models.Model):
     fin = models.DateField
 
     def __str__(self):
-        return "Guardia de %s, desde %s hasta %s", self.designado.user.first_name, self.inicio, self.fin
+        return "Guardia de %s, desde %s hasta %s.", self.designado.user.first_name, self.inicio, self.fin
 
 
 
@@ -31,8 +31,8 @@ class Ticket(models.Model):
     titulo = models.CharField(max_length=300)
     asunto = models.CharField(max_length=500, null=True)
     contenido = models.CharField(max_length=500, null=True)
-    prioridad = models.CharField(max_length=15, choices=(('urgente', 'urgente'), ('estandar', 'estandar'),
-                                                         ('baja', 'baja')))
+    prioridad = models.CharField(max_length=15, choices=(('Urgente', 'Urgente'), ('Estandar', 'Estandar'),
+                                                         ('Baja', 'Baja')))
     impacto = models.CharField(max_length=8, null=True)
     direccionamiento = models.CharField(max_length=10, null=True)
     cybersystem = models.CharField(max_length=10, null=True)
