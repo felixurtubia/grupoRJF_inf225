@@ -4,6 +4,7 @@ from .models import Ticket, Empleado, TextData, FileData
 from django.db.models import Q
 from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm
 from django.contrib.auth.models import User
+from datetime import datetime
 
 DATA_FILE_TYPES = ['png', 'jpg', 'jpeg', 'xls', 'xlsx', 'word', 'wordx', 'pdf']
 
@@ -172,7 +173,7 @@ def visar_text(request, data_id, ticket_id):
             data.visada = True
             data.save()
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/supervisor/detail.html',
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'operadores': operadores, 'user': request.user})
         else:
             return redirect('ticket:index')
@@ -188,7 +189,7 @@ def no_visar_text(request, data_id, ticket_id):
             data.visada = False
             data.save()
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/supervisor/detail.html',
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'operadores': operadores, 'user': request.user})
         else:
             return redirect('ticket:index')
@@ -204,7 +205,7 @@ def visar_file(request, data_id, ticket_id):
             data.visada = True
             data.save()
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/supervisor/detail.html',
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'operadores': operadores, 'user': request.user})
         else:
             return redirect('ticket:index')
@@ -220,7 +221,7 @@ def no_visar_file(request, data_id, ticket_id):
             data.visada = False
             data.save()
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/supervisor/detail.html',
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'operadores': operadores, 'user': request.user})
         else:
             return redirect('ticket:index')

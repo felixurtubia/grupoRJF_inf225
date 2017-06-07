@@ -8,7 +8,7 @@ class Empleado(models.Model):
     birth_date = models.DateField
     cargo = models.CharField(max_length=200)
     departamento = models.CharField(max_length=200)
-    perfil = models.CharField(max_length=200, choices=(('jefe', 'jefe'), ('operador', 'operador'),
+    perfil = models.CharField(max_length=200, choices=(('operador', 'operador'),
                                                        ('supervisor', 'supervisor'), ('jefe', 'jefe')))
     direccion = models.CharField(max_length=200)
 
@@ -40,8 +40,7 @@ class Ticket(models.Model):
     fecha_cierre = models.DateField(null=True)
     # Estados
     cerrado = models.BooleanField(default=False)
-    aplazado = models.BooleanField(default=False)
-    tiempo_aplazado = models.DateField(null=True)
+    fecha_aplazo = models.DateField(null=True)
     asignado = models.BooleanField(default=False)
     eliminado = models.BooleanField(default=False)
 
