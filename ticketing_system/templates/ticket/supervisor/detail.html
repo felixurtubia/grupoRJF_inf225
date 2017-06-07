@@ -1,4 +1,4 @@
-{% extends 'ticket/operador/base.html' %}
+{% extends 'ticket/supervisor/base.html' %}
 {% block title %}Ticket Detail{% endblock %}
 {% block tickets_active %}active{% endblock %}
 {% block mis_tickets_active %}active {% endblock %}
@@ -13,9 +13,9 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h1>{{ ticket.titulo }} <small>{{ ticket.prioridad }}</small></h1>
-                    <h3>Asunto: {{ ticket.asunto }}</h3>
-                    <h3>Contenido: {{ ticket.contenido }}</h3>
-                    <h4>Creador: {{ ticket.creador }}</h4>
+                    <h5>Asunto:</h5><br><h4>{{ ticket.asunto }}</h4>
+                    <h3>Contenido: <br>{{ ticket.contenido }}</h3>
+                    <h4>Creador: <br>{{ ticket.creador }}</h4>
 
                 </div>
             </div>
@@ -28,7 +28,21 @@
                 <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">View All</a></li>
                 <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
                 <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+                {% if not ticket.asignado %}
+                    <form action="{% url 'ticket:asignar_ticket' %}" method="post">
+                        {% csrf_token %}
+                        <li role="presentation" class="active">
+                            <select required name="user">
+                                {% for operador in operadores %}
+                                    <option value={{ operador.id }}>{{ operador.first_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </li>
+                        <input type="hidden" name="ticket" value={{ ticket.id }}>
+                        <li role="presentation" class="active"><button  type="submit" >Asignar</button> </li>
+                    </form>
 
+                {% endif %}
             </ul>
 
             <div class="panel panel-default">
@@ -44,7 +58,7 @@
                         <thead>
                         <tr>
                             <th>Titulo</th>
-                            <th>Data</th>
+                            <th>Contenido</th>
                         </tr>
                         </thead>
                         <tbody>

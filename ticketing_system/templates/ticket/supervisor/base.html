@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
                 <li class="{% block tickets_active %}{% endblock %}"><a href="{% url 'ticket:index' %}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp; Tickets</a></li>
-                <li class="{% block mis_tickets_active %}{% endblock %}"><a href="{% url 'ticket:mis_tickets' %}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>&nbsp; Mis Tickets</a></li>
+                <li class="{% block tickets_no_asignados_active %}{% endblock %}"><a href="{% url 'ticket:tickets_no_asignados' %}"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets no Asignados</a> </li>
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'ticket:index' %}">
                 <div class="form-group">
@@ -42,7 +42,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Operador
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Supervisor
                     </a>
                 </li>
                 <li>

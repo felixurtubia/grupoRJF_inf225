@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
     url(r'^mis_tickets/$', views.mis_tickets, name='mis_tickets'),
     url(r'^create_ticket/$', views.create_ticket, name='create_ticket'),
+    url(r'^tickets_no_asignados/$', views.tickets_no_asignados, name='tickets_no_asignados'),
+    url(r'^asignar_ticket/$', views.asignar_ticket, name='asignar_ticket'),
     url(r'^(?P<ticket_id>[0-9]+)/$', views.detail, name='detail'),
 
     url(r'^(?P<ticket_id>[0-9]+)/create_text_data/$', views.create_text_data, name='create_text_data'),

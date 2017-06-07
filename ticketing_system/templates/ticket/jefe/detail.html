@@ -28,6 +28,9 @@
                 <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">View All</a></li>
                 <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Add New Text Data</a></li>
                 <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Add New File Data</a></li>
+                {% if not ticket.asignado %}
+                    <li role="presentation" class="active"><a href="{% url 'ticket:asignar_ticket' ticket.id user.id%}">Asignar</a> </li>
+                {% endif %}
 
             </ul>
 

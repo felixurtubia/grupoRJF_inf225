@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import Permission, User
+from datetime import datetime
 
 
 class Empleado(models.Model):
@@ -7,12 +8,23 @@ class Empleado(models.Model):
     birth_date = models.DateField
     cargo = models.CharField(max_length=200)
     departamento = models.CharField(max_length=200)
-    perfil = models.CharField(max_length=200, choices=(('administrador', 'administrador'), ('operador', 'operador'),
+    perfil = models.CharField(max_length=200, choices=(('jefe', 'jefe'), ('operador', 'operador'),
                                                        ('supervisor', 'supervisor'), ('jefe', 'jefe')))
     direccion = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.user.first_name + self.user.last_name + ' - ' + self.perfil
+        return self.user.first_name + self.user.last_name
+
+
+class Guardia(models.Model):
+    designado = models.ForeignKey(Empleado)
+    reporte = models.CharField(max_length=500)
+    inicio = models.DateField
+    fin = models.DateField
+
+    def __str__(self):
+        return "Guardia de %s, desde %s hasta %s", self.designado.user.first_name, self.inicio, self.fin
+
 
 
 class Ticket(models.Model):
@@ -21,15 +33,17 @@ class Ticket(models.Model):
     contenido = models.CharField(max_length=500)
     prioridad = models.CharField(max_length=15, choices=(('urgente', 'urgente'), ('estandar', 'estandar'),
                                                          ('baja', 'baja')))
-    # para que supervisor cierre ticket
+    impacto = models.CharField(max_length=8, null=True)
+    direccionamiento = models.CharField(max_length=10, null=True)
+    cybersystem = models.CharField(max_length=10, null=True)
+    fecha_apertura = models.DateField(default=datetime.now)
+    fecha_cierre = models.DateField(null=True)
+    # Estados
     cerrado = models.BooleanField(default=False)
-    # para que supervisor aplaze ticket
     aplazado = models.BooleanField(default=False)
-    tiempo_aplazado = models.DateField
-    # para ver si se ha asignado o no
+    tiempo_aplazado = models.DateField(null=True)
     asignado = models.BooleanField(default=False)
-    # ticket completo, enviado a supervisor para revisar y cerrar
-    resuelto = models.BooleanField(default=False)
+    eliminado = models.BooleanField(default=False)
 
     creador = models.ForeignKey(User, related_name='creador')
     encargado = models.ForeignKey(User, related_name='encargado', null=True)
@@ -37,6 +51,65 @@ class Ticket(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+# Tipo de Ticket
+class Correo(models.Model):
+    ticket = models.OneToOneField(Ticket, on_delete=models.CASCADE)
+    email_atacante = models.CharField(max_length=100)
+    email_suplantado = models.CharField(max_length=100)
+    asunto_correo = models.CharField(max_length=500)
+    nro_afectados = models.IntegerField(default=0)
+    catalogamiento = models.CharField(max_length=50)
+    tipo = models.CharField(max_length=50)
+    subtipo = models.CharField(max_length=200)
+    clase = models.CharField(max_length=200)
+
+
+class DetalleContenido(models.Model):
+    correo = models.OneToOneField(Correo, on_delete=models.CASCADE)
+    link = models.CharField(max_length=100)
+    link_enmascarado = models.CharField(max_length=100)
+    dominio = models.CharField(max_length=300)
+    adjunto_name = models.CharField(max_length=100)
+
+
+class DetalleCorreo(models.Model):
+    correo = models.OneToOneField(Correo, on_delete=models.CASCADE)
+    cliente = models.CharField(max_length=100)
+    uurr = models.CharField(max_length=50)
+    # tecnico
+    fecha_recepcion = models.DateField
+    comprometido = models.BooleanField(default=False)
+    comentario = models.CharField(max_length=200, default='')
+
+
+# Tipo de Ticket
+class Evento(models.Model):
+    ticket = models.OneToOneField(Ticket, on_delete=models.CASCADE)
+    signo = models.IntegerField
+    geolocalizacion = models.CharField(max_length=10)
+    puerto_destino = models.IntegerField
+    ip_origen = models.CharField(max_length=15)
+    ip_destino = models.CharField(max_length=15)
+    servicio_afectado = models.CharField(max_length=250)
+    alerta_id = models.CharField(max_length=25)
+    alerta_name = models.CharField(max_length=25)
+    hashsha1 = models.CharField(max_length=150)
+    hashsha2 = models.CharField(max_length=150)
+    hashshamd5 = models.CharField(max_length=150)
+    tipo = models.CharField(max_length=50)
+    subtipo = models.CharField(max_length=200)
+    clase = models.CharField(max_length=200)
+
+
+#Tipo de Ticket
+class Trabajo(models.Model):
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    tipo = models.CharField(max_length=100)
+    inicio = models.DateField
+    equipo = models.CharField(max_length=250)
+    sector = models.CharField(max_length=250)
 
 
 class Keyword(models.Model):
@@ -55,6 +128,7 @@ class FileData(models.Model):
     def __str__(self):
         return self.data_title
 
+
 class TextData(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     data_title = models.CharField(max_length=250)
@@ -62,3 +136,15 @@ class TextData(models.Model):
 
     def __str__(self):
         return self.data_title
+
+
+class VinculoHijo(models.Model):
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    ticket_hijo = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='relacion_hijo')
+    vinculo = models.CharField(max_length=50)
+
+
+class VinculoPadre(models.Model):
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    ticket_padre = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='relacion_padre')
+    vinculo = models.CharField(max_length=50)
