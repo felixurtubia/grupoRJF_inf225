@@ -1,0 +1,51 @@
+{% extends 'ticket/operador/base.html' %}
+{% block tickets_active %}active{% endblock %}
+{% block mis_tickets_active %}active {% endblock %}
+
+{% block body %}
+<div class="albums-container container-fluid">
+
+    <!-- Tickets -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Tickets</h3>
+        </div>
+        {% if tickets %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Asunto</th>
+                    <th>Prioridad</th>
+                    <th>Creador</th>
+                    <th>Encargado</th>
+                    <th>Detalles</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket.titulo }}</td>
+                        <td>{{ ticket.asunto }}</td>
+                        <td>{{ ticket.prioridad }}</td>
+                        <td>{{ ticket.creador.first_name }}</td>
+                        <td>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</td>
+                        <td><a href="{% url 'ticket:detail' ticket.id %}" class="btn btn-primary btn-sm" role="button">Ver Detalles</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="col-sm-12">
+                <br>
+                <a href="{% url 'ticket:create_ticket' %}">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Crear un Ticket
+                    </button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

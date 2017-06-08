@@ -1,0 +1,130 @@
+{% extends 'ticket/operador/base.html' %}
+{% block title %}Detalles del ticket{% endblock %}
+{% block tickets_active %}active{% endblock %}
+{% block mis_tickets_active %}active {% endblock %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body" {% if ticket.prioridad == 'baja' %}
+                            style="background-color:#BFF2A7"
+                        {% elif ticket.prioridad == 'estandar' %}
+                            style="background-color:#F2EFA7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
+                    <h2>{{ ticket.titulo }} <br><small>{{ ticket.fecha_apertura|date:"d M Y" }}</small></h2>
+                    {% if ticket.asunto %}<h5>Asunto:</h5><br><h4>{{ ticket.asunto }}</h4><br>{% endif %}
+                    {% if ticket.contenido %}<h5>Contenido:</h5><br><h4>{{ ticket.contenido }}</h4><br>{% endif %}
+                    <h5>Encargado:</h5><br><h4>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">Ver todo</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacion</a></li>
+                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
+
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3>Toda la data</h3>
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Data</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for tdata in ticket.textdata_set.all %}
+                            <tr {% if tdata.visada %}
+                            style="background-color:#BFF2A7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
+                                <td>{{ tdata }}</td>
+                                <td>{{ tdata.data_text }}<td>
+                                {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                                    <td>
+                                    {% if not tdata.visada %}
+                                        <a href="{% url 'ticket:visar_data_text' tdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-ok-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'ticket:no_visar_data_text' tdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% endif %}
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                        {% for fdata in ticket.filedata_set.all %}
+                            <tr {% if fdata.visada %}
+                            style="background-color:#BFF2A7"
+                        {% else %}
+                            style="background-color:#F2B2A7"
+                        {% endif %}>
+                                <td>{{ fdata }}</td>
+                                <td>
+                                    <a target="_blank" href="{{ fdata.data_file.url }}">
+                                        <button type="button" class="btn btn-success btn-xs">
+                                            <span class="glyphicon glyphicon-save-file"></span>&nbsp; Descargar
+                                        </button>
+                                    </a>
+                                </td>
+                            {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                                    <td>
+                                    {% if not fdata.visada %}
+                                        <a href="{% url 'ticket:visar_data_file' fdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-ok-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'ticket:no_visar_data_file' fdata.id ticket.id %}">
+                                            <button type="button" class="btn btn-success btn-xs">
+                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            </button>
+                                        </a>
+                                    {% endif %}
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
