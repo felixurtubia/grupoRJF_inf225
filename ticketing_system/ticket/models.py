@@ -46,7 +46,7 @@ class Ticket(models.Model):
 
     creador = models.ForeignKey(User, related_name='creador')
     encargado = models.ForeignKey(User, related_name='encargado', null=True)
-    cerrador = models.ForeignKey(User, related_name='cerrador', null =True)
+    cerrador = models.ForeignKey(User, related_name='cerrador', null=True)
 
     def __str__(self):
         return self.titulo
@@ -137,6 +137,15 @@ class TextData(models.Model):
 
     def __str__(self):
         return self.data_title
+
+
+class Vinculo(models.Model):
+    ticket_padre =models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='hijo')
+    ticket_hijo = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='padre')
+    vinculo = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.vinculo
 
 
 class VinculoHijo(models.Model):

@@ -36,17 +36,17 @@
                     </a>
                 </li>
                 <li class="{% block tickets_no_asignados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:tickets_no_asignados' %}">
+                    <a href="{% url 'ticket:vista' 'no_asignados'%}">
                         <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets no Asignados
                     </a>
                 </li>
                 <li class="{% block tickets_cerrados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:tickets_cerrados' %}">
+                    <a href="{% url 'ticket:vista' 'cerrados' %}">
                         <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Cerrados
                     </a>
                 </li>
                 <li class="{% block tickets_eliminados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:tickets_eliminados' %}">
+                    <a href="{% url 'ticket:vista' 'eliminados' %}">
                         <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Eliminados
                     </a>
                 </li>

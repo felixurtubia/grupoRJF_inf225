@@ -34,21 +34,22 @@
                 <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">Ver todo</a></li>
                 <li role="presentation" class="active"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacion</a></li>
                 <li role="presentation" class="active"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:accion' ticket.id 'vincular'%}">Vincular</a> </li>
                 {% if not ticket.cerrado %}
-                    <li role="presentation" class="active" ><a href="{% url 'ticket:cerrar' ticket.id %}" style="background-color: #F2EFA7">Cerrar Ticket</a></li>
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:accion' ticket.id 'cerrar' %}" style="background-color: #F2EFA7">Cerrar Ticket</a></li>
                 {% endif %}
                 {% if ticket.cerrado %}
-                    <li role="presentation" class="active" ><a href="{% url 'ticket:abrir' ticket.id %}" style="background-color: #F2EFA7">Abrir Ticket</a></li>
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:accion' ticket.id 'abrir' %}" style="background-color: #F2EFA7">Abrir Ticket</a></li>
                 {% endif %}
                 {% if not ticket.eliminado %}
-                    <li role="presentation" class="active" ><a href="{% url 'ticket:eliminar' ticket.id %}" style="background-color:#F2B2A7">Eliminar Ticket</a></li>
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:accion' ticket.id 'eliminar' %}" style="background-color:#F2B2A7">Eliminar Ticket</a></li>
                 {% endif %}
                 {% if ticket.eliminado %}
-                    <li role="presentation" class="active" ><a href="{% url 'ticket:restaurar' ticket.id %}" style="background-color:#F2B2A7">Restaurar Ticket</a></li>
+                    <li role="presentation" class="active" ><a href="{% url 'ticket:accion' ticket.id 'restaurar' %}" style="background-color:#F2B2A7">Restaurar Ticket</a></li>
                 {% endif %}
                 {% if not ticket.asignado %}
                     <li>
-                    <form action="{% url 'ticket:asignar_ticket' %}" method="post">
+                    <form action="{% url 'ticket:accion' ticket.id 'asignar' %}" method="post">
                         {% csrf_token %}
                             <select required name="user">
                                 {% for operador in operadores %}
@@ -61,7 +62,7 @@
                     </li>
                 {% else %}
                     <li>
-                    <form action="{% url 'ticket:asignar_ticket' %}" method="post">
+                    <form action="{% url 'ticket:accion' ticket.id 'asignar' %}" method="post">
                         {% csrf_token %}
                             <select required name="user">
                                 {% for operador in operadores %}

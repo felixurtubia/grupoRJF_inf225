@@ -1,15 +1,23 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Ticket, Keyword, TextData, FileData
+from .models import Ticket, Keyword, TextData, FileData, Vinculo
 
 
 class TicketForm(forms.ModelForm):
     asunto = forms.CharField(max_length=500, widget=forms.Textarea)
     contenido = forms.CharField(max_length=10000, widget=forms.Textarea)
+
     class Meta:
         model = Ticket
         fields = ['titulo', 'prioridad']
+
+
+class VinculoForm(forms.ModelForm):
+
+    class Meta:
+        model = Vinculo
+        fields = ['ticket_padre','vinculo']
 
 
 class KeywordForm(forms.ModelForm):
