@@ -7,9 +7,12 @@ from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm
 from django.contrib.auth.models import User
 from datetime import datetime
 
+# tipo de archivo permitido para cargar la data
+
 DATA_FILE_TYPES = ['png', 'jpg', 'jpeg', 'xls', 'xlsx', 'word', 'wordx', 'pdf']
 
 
+# pagina principal de cada usuario logeado
 def index(request):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
@@ -18,11 +21,12 @@ def index(request):
         return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
 
 
+# se aplican filtros para la lista de los tickets y se envia a index
 def vista(request, tag=''):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        if tag =='mis_tickets':
+        if tag == 'mis_tickets':
             tickets = Ticket.objects.filter(cerrado=False, eliminado=False, encargado=request.user)
         elif tag == 'cerrados':
             tickets = Ticket.objects.filter(cerrado=True, eliminado=False)
@@ -37,6 +41,7 @@ def vista(request, tag=''):
         return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
 
 
+# detalle de un ticket, recibe el usuario y el id del ticket
 def detail(request, ticket_id):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
@@ -52,14 +57,7 @@ def detail(request, ticket_id):
                           {'ticket': ticket, 'user': user})
 
 
-def mis_tickets(request):
-    if not request.user.is_authenticated():
-        return render(request, 'ticket/login.html')
-    else:
-        tickets = Ticket.objects.filter(cerrado=False, encargado=request.user, eliminado=False)
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
-
-
+# se aplica una accion sobre un TICKET, solo puede ser hecho por supervisor (agregar al jefe)
 def accion(request, ticket_id, accion):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
@@ -111,8 +109,11 @@ def accion(request, ticket_id, accion):
                     'form': form,
                 }
                 return render(request, 'ticket/create_vinculo.html', context)
+            else:
+                redirect('ticket:index')
 
 
+# visar o no visar para cada una de las leseeeras
 def visar_text(request, data_id, ticket_id):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
@@ -176,7 +177,7 @@ def no_visar_file(request, data_id, ticket_id):
         else:
             return redirect('ticket:index')
 
-
+# crear un ticket, crea una forma y la muestra en un template
 def create_ticket(request):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
