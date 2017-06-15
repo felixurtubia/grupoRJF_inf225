@@ -140,21 +140,9 @@ class TextData(models.Model):
 
 
 class Vinculo(models.Model):
-    ticket_padre =models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='hijo')
+    ticket_padre = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='hijo')
     ticket_hijo = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='padre')
     vinculo = models.CharField(max_length=50)
 
     def __str__(self):
         return self.vinculo
-
-
-class VinculoHijo(models.Model):
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
-    ticket_hijo = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='relacion_hijo')
-    vinculo = models.CharField(max_length=50)
-
-
-class VinculoPadre(models.Model):
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
-    ticket_padre = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name='relacion_padre')
-    vinculo = models.CharField(max_length=50)

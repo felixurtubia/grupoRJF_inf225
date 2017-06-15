@@ -4,12 +4,11 @@
     <list default="true" id="7912e21b-a1de-4ed0-9d76-1f49480267b7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/operador/base.html" afterPath="$PROJECT_DIR$/templates/ticket/operador/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/login.html" afterPath="$PROJECT_DIR$/templates/ticket/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/operador/detail.html" afterPath="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/operador/index.html" afterPath="$PROJECT_DIR$/templates/ticket/operador/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/create_data_file.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/create_data_file.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/forms.py" afterPath="$PROJECT_DIR$/ticket/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/index.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/models.py" afterPath="$PROJECT_DIR$/ticket/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/urls.py" afterPath="$PROJECT_DIR$/ticket/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/views.py" afterPath="$PROJECT_DIR$/ticket/views.py" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticket/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="143" column="89" lean-forward="false" selection-start-line="143" selection-start-column="89" selection-end-line="143" selection-end-column="89" />
+            <state relative-caret-position="442">
+              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticket/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="630">
+              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -48,11 +47,45 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/ticket/operador/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1905">
+              <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="184" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ticket/operador/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticket/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="215" column="44" lean-forward="true" selection-start-line="215" selection-start-column="44" selection-end-line="215" selection-end-column="44" />
+            <state relative-caret-position="2370">
+              <caret line="253" column="17" lean-forward="true" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
               <folding>
                 <element signature="e#24#88#0" expanded="true" />
                 <element signature="e#839#1726#0" expanded="false" />
@@ -64,40 +97,8 @@
                 <element signature="e#5852#6548#0" expanded="false" />
                 <element signature="e#6600#7295#0" expanded="false" />
                 <element signature="e#7350#8046#0" expanded="false" />
-                <element signature="e#8081#9222#0" expanded="false" />
-                <element signature="e#10995#11799#0" expanded="false" />
-                <element signature="e#11832#11990#0" expanded="false" />
+                <element signature="e#11284#11442#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="68" column="33" lean-forward="false" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_vinculo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -105,8 +106,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticket/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="103" lean-forward="false" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -140,25 +141,25 @@
         <option value="$PROJECT_DIR$/templates/ticket/supervisor/no_asignados.html" />
         <option value="$PROJECT_DIR$/templates/ticket/operador/mis_tickets.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/index.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/supervisor/index.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/login.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
         <option value="$PROJECT_DIR$/templates/ticket/create_ticket.html" />
         <option value="$PROJECT_DIR$/templates/ticket/base_visitante.html" />
         <option value="$PROJECT_DIR$/templates/ticket/operador/create_data_file.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/create_data_file.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/detail.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/operador/index.html" />
         <option value="$PROJECT_DIR$/templates/ticket/operador/base.html" />
         <option value="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
-        <option value="$PROJECT_DIR$/ticket/urls.py" />
         <option value="$PROJECT_DIR$/templates/ticket/supervisor/create_data_file.html" />
         <option value="$PROJECT_DIR$/templates/ticket/create_vinculo.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
-        <option value="$PROJECT_DIR$/ticket/models.py" />
-        <option value="$PROJECT_DIR$/ticket/views.py" />
         <option value="$PROJECT_DIR$/ticket/forms.py" />
+        <option value="$PROJECT_DIR$/templates/ticket/operador/index.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/supervisor/index.html" />
+        <option value="$PROJECT_DIR$/ticket/urls.py" />
+        <option value="$PROJECT_DIR$/ticket/views.py" />
+        <option value="$PROJECT_DIR$/templates/ticket/login.html" />
+        <option value="$PROJECT_DIR$/ticket/models.py" />
+        <option value="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
       </list>
     </option>
   </component>
@@ -211,6 +212,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supervisor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticketing_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operador" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,9 +607,7 @@
             <element signature="e#5852#6548#0" expanded="false" />
             <element signature="e#6600#7295#0" expanded="false" />
             <element signature="e#7350#8046#0" expanded="false" />
-            <element signature="e#8081#9222#0" expanded="false" />
-            <element signature="e#10995#11799#0" expanded="false" />
-            <element signature="e#11832#11990#0" expanded="false" />
+            <element signature="e#11284#11442#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -659,9 +720,7 @@
             <element signature="e#5852#6548#0" expanded="false" />
             <element signature="e#6600#7295#0" expanded="false" />
             <element signature="e#7350#8046#0" expanded="false" />
-            <element signature="e#8081#9222#0" expanded="false" />
-            <element signature="e#10995#11799#0" expanded="false" />
-            <element signature="e#11832#11990#0" expanded="false" />
+            <element signature="e#11284#11442#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,22 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="86" lean-forward="false" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/create_ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="83" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="41" column="83" lean-forward="true" selection-start-line="41" selection-start-column="83" selection-end-line="41" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/no_asignados.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-226">
@@ -785,44 +820,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/operador/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="33" column="100" lean-forward="true" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="103" lean-forward="false" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,28 +908,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="143" column="89" lean-forward="false" selection-start-line="143" selection-start-column="89" selection-end-line="143" selection-end-column="89" />
+        <state relative-caret-position="316">
+          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/create_ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
+    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="68" column="33" lean-forward="false" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        <state relative-caret-position="256">
+          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ticket/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="215" column="44" lean-forward="true" selection-start-line="215" selection-start-column="44" selection-end-line="215" selection-end-column="44" />
+        <state relative-caret-position="2370">
+          <caret line="253" column="17" lean-forward="true" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
           <folding>
             <element signature="e#24#88#0" expanded="true" />
             <element signature="e#839#1726#0" expanded="false" />
@@ -939,27 +975,45 @@
             <element signature="e#5852#6548#0" expanded="false" />
             <element signature="e#6600#7295#0" expanded="false" />
             <element signature="e#7350#8046#0" expanded="false" />
-            <element signature="e#8081#9222#0" expanded="false" />
-            <element signature="e#10995#11799#0" expanded="false" />
-            <element signature="e#11832#11990#0" expanded="false" />
+            <element signature="e#11284#11442#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
+    <entry file="file://$PROJECT_DIR$/ticket/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="442">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="184" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/forms.py">
+    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="1905">
+          <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
