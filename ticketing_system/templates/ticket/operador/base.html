@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
                 <li class="{% block tickets_active %}{% endblock %}"><a href="{% url 'ticket:index' %}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp; Tickets</a></li>
-                <li class="{% block mis_tickets_active %}{% endblock %}"><a href="{% url 'ticket:mis_tickets' %}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>&nbsp; Mis Tickets</a></li>
+                <li class="{% block mis_tickets_active %}{% endblock %}"><a href="{% url 'ticket:vista' 'mis_tickets' %}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>&nbsp; Mis Tickets</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'ticket:index' %}">
                 <div class="form-group">
