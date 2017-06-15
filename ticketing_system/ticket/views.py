@@ -188,13 +188,7 @@ def create_ticket(request):
             ticket.asunto = request.POST['asunto']
             ticket.contenido = request.POST['contenido']
             ticket.save()
-            if str(request.user.empleado.perfil) == 'supervisor':
-                operadores = User.objects.filter(empleado__perfil='operador')
-                return render(request, 'ticket/supervisor/detail.html',
-                              {'ticket': ticket, 'operadores': operadores})
-            else:
-                return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
-                              {'ticket': ticket, 'user': request.user})
+            return redirect('ticket:detail', ticket.id)
         perfil = request.user.empleado.perfil
         extiende = 'ticket/' + str(perfil) + '/base.html'
         context = {
@@ -239,8 +233,7 @@ def create_text_data(request, ticket_id):
         data.ticket = ticket
         data.data_text = request.POST['data_text']
         data.save()
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
-                      {'ticket': ticket, 'user': request.user})
+        return redirect('ticket:detail', ticket_id)
     context = {
         'ticket': ticket,
         'form': form,
@@ -256,7 +249,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                tickets = Ticket.objects.filter(creador=request.user, eliminado=False, cerrado=False)
+                tickets = Ticket.objects.filter(eliminado=False, cerrado=False)
                 return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
             else:
                 return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido deshabilitada.'})

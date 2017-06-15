@@ -24,11 +24,11 @@
                 </thead>
                 <tbody>
                 {% for ticket in tickets %}
-                    <tr {% if ticket.prioridad == 'baja' %}
+                    <tr {% if ticket.prioridad == 'Baja' %}
                             style="background-color:#BFF2A7"
-                        {% elif ticket.prioridad == 'estandar' %}
+                        {% elif ticket.prioridad == 'Estandar' %}
                             style="background-color:#F2EFA7"
-                        {% else %}
+                        {% elif ticket.prioridad == 'Urgente' %}
                             style="background-color:#F2B2A7"
                         {% endif %}>
                         <td>{{ ticket.titulo }}</td>

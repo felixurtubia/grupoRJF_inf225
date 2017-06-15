@@ -11,9 +11,9 @@
         <!-- Left Album Info -->
         <div class="col-sm-4 col-md-3">
             <div class="panel panel-default">
-                <div class="panel-body" {% if ticket.prioridad == 'baja' %}
+                <div class="panel-body" {% if ticket.prioridad == 'Baja' %}
                             style="background-color:#BFF2A7"
-                        {% elif ticket.prioridad == 'estandar' %}
+                        {% elif ticket.prioridad == 'Estandar' %}
                             style="background-color:#F2EFA7"
                         {% else %}
                             style="background-color:#F2B2A7"
@@ -123,6 +123,25 @@
 
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body" style="background-color:#14D6EB">
+                    <h2>Vinculaciones</h2>
+                    <h5>Padre:</h5>
+                    {% for padre in ticket.padre.all %}
+                        <h4><a href={% url "ticket:detail" padre.ticket_padre.id %}> {{ padre.ticket_padre }}</a></h4>
+                    {% endfor %}
+                    <h5>Hijos:</h5>
+                    {% for hijo in ticket.hijo.all %}
+                        <h4><a href={% url "ticket:detail" hijo.ticket_hijo.id %}> {{hijo.ticket_hijo}}</a></h4>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
