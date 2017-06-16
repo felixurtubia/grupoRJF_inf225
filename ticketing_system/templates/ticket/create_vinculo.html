@@ -1,4 +1,4 @@
-{% extends 'ticket/supervisor/base.html' %}
+{% extends base %}
 {% block title %}Vinculacion{% endblock %}
 
 
@@ -8,17 +8,9 @@
     <div class="row">
 
         <!-- Left Album Info -->
-        <div class="col-sm-4 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h1>{{ ticket.titulo }} <small>{{ ticket.prioridad }}</small></h1>
-                    <h3>Asunto: {{ ticket.asunto }}</h3>
-                    <h3>Contenido: {{ ticket.contenido }}</h3>
-                    <h4>Creador: {{ ticket.creador }}</h4>
-
-                </div>
-            </div>
-        </div>
+        {% include 'ticket/elementos/detalles_ticket.html' %}
+        {% block detalles_ticket %}
+        {% endblock detalles_ticket %}
 
         <!-- Right Song Info -->
         <div class="col-sm-8 col-md-9">
@@ -49,6 +41,9 @@
         </div>
 
     </div>
+    {% include 'ticket/elementos/vinculos_ticket.html' %}
+    {% block vinculos_ticket %}
+    {% endblock vinculos_ticket %}
 
 </div>
 

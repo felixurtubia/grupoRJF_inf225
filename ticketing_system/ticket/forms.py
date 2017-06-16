@@ -10,7 +10,7 @@ class TicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        fields = ['titulo', 'prioridad']
+        fields = ['titulo', 'prioridad', 'impacto', 'direccionamiento', 'cybersystem']
 
 
 class VinculoForm(forms.ModelForm):

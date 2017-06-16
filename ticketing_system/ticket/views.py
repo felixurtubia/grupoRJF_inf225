@@ -48,9 +48,9 @@ def detail(request, ticket_id):
     else:
         ticket = get_object_or_404(Ticket, pk=ticket_id)
         user = request.user
-        if str(request.user.empleado.perfil) == 'supervisor':
+        if str(request.user.empleado.perfil) == 'supervisor' or str(request.user.empleado.perfil) == 'jefe':
             operadores = User.objects.filter(empleado__perfil='operador')
-            return render(request, 'ticket/supervisor/detail.html',
+            return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'operadores': operadores})
         else:
             return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
@@ -62,7 +62,7 @@ def accion(request, ticket_id, accion):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        if not str(request.user.empleado.perfil) == 'supervisor':
+        if not (str(request.user.empleado.perfil) == 'supervisor' or str(request.user.empleado.perfil) == 'jefe'):
             return redirect('ticket:index')
         else:
             if accion == 'asignar':
@@ -107,6 +107,7 @@ def accion(request, ticket_id, accion):
                 context = {
                     'ticket': ticket,
                     'form': form,
+                    'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
                 }
                 return render(request, 'ticket/create_vinculo.html', context)
             else:
@@ -222,8 +223,9 @@ def create_file_data(request, ticket_id):
     context = {
         'ticket': ticket,
         'form': form,
+        'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
     }
-    return render(request, 'ticket/' + request.user.empleado.perfil + '/create_data_file.html', context)
+    return render(request, 'ticket/create_data_file.html', context)
 
 
 def create_text_data(request, ticket_id):
@@ -238,8 +240,9 @@ def create_text_data(request, ticket_id):
     context = {
         'ticket': ticket,
         'form': form,
+        'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
     }
-    return render(request, 'ticket/' + request.user.empleado.perfil + '/create_data_file.html', context)
+    return render(request, 'ticket/create_data_file.html', context)
 
 
 def login_user(request):

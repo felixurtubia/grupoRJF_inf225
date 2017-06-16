@@ -28,9 +28,9 @@ class Guardia(models.Model):
 
 
 class Ticket(models.Model):
-    titulo = models.CharField(max_length=300)
-    asunto = models.CharField(max_length=500, null=True)
-    contenido = models.CharField(max_length=500, null=True)
+    titulo = models.CharField(max_length=100)
+    asunto = models.CharField(max_length=300, null=True)
+    contenido = models.CharField(max_length=300, null=True)
     prioridad = models.CharField(max_length=15, choices=(('Urgente', 'Urgente'), ('Estandar', 'Estandar'),
                                                          ('Baja', 'Baja')))
     impacto = models.CharField(max_length=8, null=True)

@@ -1,0 +1,86 @@
+ {% block data_ticket %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <h3>Toda la data</h3>
+
+            {% if error_message %}
+                <p><strong>{{ error_message }}</strong></p>
+            {% endif %}
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Contenido</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for tdata in ticket.textdata_set.all %}
+                    <tr {% if tdata.visada %}
+                    style="background-color:#BFF2A7"
+                {% else %}
+                    style="background-color:#F2B2A7"
+                {% endif %}>
+                        <td>{{ tdata }}</td>
+                        <td>{{ tdata.data_text }}<td>
+                        {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                            <td>
+                            {% if not tdata.visada %}
+                                <a href="{% url 'ticket:visar_data_text' tdata.id ticket.id %}">
+                                    <button type="button" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-ok-sign"></span>
+                                    </button>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'ticket:no_visar_data_text' tdata.id ticket.id %}">
+                                    <button type="button" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-remove-sign"></span>
+                                    </button>
+                                </a>
+                            {% endif %}
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                {% for fdata in ticket.filedata_set.all %}
+                    <tr {% if fdata.visada %}
+                    style="background-color:#BFF2A7"
+                {% else %}
+                    style="background-color:#F2B2A7"
+                {% endif %}>
+                        <td>{{ fdata }}</td>
+                        <td>
+                            <a target="_blank" href="{{ fdata.data_file.url }}">
+                                <button type="button" class="btn btn-success btn-xs">
+                                    <span class="glyphicon glyphicon-save-file"></span>&nbsp; Descargar
+                                </button>
+                            </a>
+                        </td>
+                    {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                            <td>
+                            {% if not fdata.visada %}
+                                <a href="{% url 'ticket:visar_data_file' fdata.id ticket.id %}">
+                                    <button type="button" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-ok-sign"></span>
+                                    </button>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'ticket:no_visar_data_file' fdata.id ticket.id %}">
+                                    <button type="button" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-remove-sign"></span>
+                                    </button>
+                                </a>
+                            {% endif %}
+                            </td>
+                        {% endif %}
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock data_ticket %}
