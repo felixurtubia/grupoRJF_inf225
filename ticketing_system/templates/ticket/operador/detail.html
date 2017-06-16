@@ -9,23 +9,9 @@
     <div class="row">
 
         <!-- Left Album Info -->
-        <div class="col-sm-4 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body" {% if ticket.prioridad == 'Baja' %}
-                            style="background-color:#BFF2A7"
-                        {% elif ticket.prioridad == 'Estandar' %}
-                            style="background-color:#F2EFA7"
-                        {% else %}
-                            style="background-color:#F2B2A7"
-                        {% endif %}>
-                    <h2>{{ ticket.titulo }} <br><small>{{ ticket.fecha_apertura|date:"d M Y" }}</small></h2>
-                    {% if ticket.asunto %}<h5>Asunto:</h5><br><h4>{{ ticket.asunto }}</h4><br>{% endif %}
-                    {% if ticket.contenido %}<h5>Contenido:</h5><br><h4>{{ ticket.contenido }}</h4><br>{% endif %}
-                    <h5>Encargado:</h5><br><h4>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</h4>
-
-                </div>
-            </div>
-        </div>
+        {% include 'ticket/elementos/detalles_ticket.html' %}
+        {% block detalles_ticket %}
+        {% endblock detalles_ticket %}
 
         <!-- Right Song Info -->
         <div class="col-sm-8 col-md-9">
@@ -37,112 +23,17 @@
 
             </ul>
 
-            <div class="panel panel-default">
-                <div class="panel-body">
-
-                    <h3>Toda la data</h3>
-
-                    {% if error_message %}
-                        <p><strong>{{ error_message }}</strong></p>
-                    {% endif %}
-
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Data</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for tdata in ticket.textdata_set.all %}
-                            <tr {% if tdata.visada %}
-                            style="background-color:#BFF2A7"
-                        {% else %}
-                            style="background-color:#F2B2A7"
-                        {% endif %}>
-                                <td>{{ tdata }}</td>
-                                <td>{{ tdata.data_text }}<td>
-                                {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
-                                    <td>
-                                    {% if not tdata.visada %}
-                                        <a href="{% url 'ticket:visar_data_text' tdata.id ticket.id %}">
-                                            <button type="button" class="btn btn-success btn-xs">
-                                                <span class="glyphicon glyphicon-ok-sign"></span>
-                                            </button>
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'ticket:no_visar_data_text' tdata.id ticket.id %}">
-                                            <button type="button" class="btn btn-success btn-xs">
-                                                <span class="glyphicon glyphicon-remove-sign"></span>
-                                            </button>
-                                        </a>
-                                    {% endif %}
-                                    </td>
-                                {% endif %}
-                            </tr>
-                        {% endfor %}
-                        {% for fdata in ticket.filedata_set.all %}
-                            <tr {% if fdata.visada %}
-                            style="background-color:#BFF2A7"
-                        {% else %}
-                            style="background-color:#F2B2A7"
-                        {% endif %}>
-                                <td>{{ fdata }}</td>
-                                <td>
-                                    <a target="_blank" href="{{ fdata.data_file.url }}">
-                                        <button type="button" class="btn btn-success btn-xs">
-                                            <span class="glyphicon glyphicon-save-file"></span>&nbsp; Descargar
-                                        </button>
-                                    </a>
-                                </td>
-                            {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
-                                    <td>
-                                    {% if not fdata.visada %}
-                                        <a href="{% url 'ticket:visar_data_file' fdata.id ticket.id %}">
-                                            <button type="button" class="btn btn-success btn-xs">
-                                                <span class="glyphicon glyphicon-ok-sign"></span>
-                                            </button>
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'ticket:no_visar_data_file' fdata.id ticket.id %}">
-                                            <button type="button" class="btn btn-success btn-xs">
-                                                <span class="glyphicon glyphicon-remove-sign"></span>
-                                            </button>
-                                        </a>
-                                    {% endif %}
-                                    </td>
-                                {% endif %}
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
+        {% include 'ticket/elementos/data_ticket.html' %}
+        {% block data_ticket %}
+        {% endblock data_ticket %}
 
         </div>
 
     </div>
 
-    <div class="row">
-        <div class="col-sm-4 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body" style="background-color:#14D6EB">
-                    <h2>Vinculaciones</h2>
-                    <h5>Padre:</h5>
-                    {% for padre in ticket.padre.all %}
-                        <h4><a href={% url "ticket:detail" padre.ticket_padre.id %}> {{ padre.ticket_padre }}</a></h4>
-                    {% endfor %}
-                    <h5>Hijos:</h5>
-                    {% for hijo in ticket.hijo.all %}
-                        <h4><a href={% url "ticket:detail" hijo.ticket_hijo.id %}> {{hijo.ticket_hijo}}</a></h4>
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include 'ticket/elementos/vinculos_ticket.html' %}
+    {% block vinculos_ticket %}
+    {% endblock vinculos_ticket %}
 
 </div>
 
