@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from datetime import date
 
 from .models import Ticket, Keyword, TextData, FileData, Vinculo
 
@@ -18,6 +19,11 @@ class VinculoForm(forms.ModelForm):
     class Meta:
         model = Vinculo
         fields = ['ticket_padre','vinculo']
+
+
+class AplazarForm(forms.Form):
+    fecha_aplazo = forms.DateField()
+
 
 
 class KeywordForm(forms.ModelForm):

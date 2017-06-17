@@ -1,9 +1,10 @@
-{% extends 'ticket/jefe/base.html' %}
-{% block tickets_active %}active{% endblock %}
-{% block mis_tickets_active %}active {% endblock %}
-{% block tickets_cerrados_active %}active {% endblock %}
-{% block tickets_eliminados_active %}active {% endblock %}
-{% block tickets_no_asignados_active %}active {% endblock %}
+{% extends base %}
+{% block tickets_active %}{{ tickets_active }}{% endblock %}
+{% block mis_tickets_active %}{{ mis_tickets_active }}{% endblock %}
+{% block tickets_cerrados_active %}{{ tickets_cerrados_active }} {% endblock %}
+{% block tickets_eliminados_active %}{{ tickets_eliminados_active }} {% endblock %}
+{% block tickets_no_asignados_active %}{{ tickets_no_asignados_active }} {% endblock %}
+{% block tickets_aplazados_active %}{{ tickets_aplazados_active }} {% endblock %}
 
 
 {% block body %}
@@ -23,6 +24,9 @@
                     <th>Prioridad</th>
                     <th>Creación</th>
                     <th>Encargado</th>
+                    {% if tickets_aplazados_active %}
+                        <th>Aplazado Hasta</th>
+                    {% endif %}
                     <th>Detalles</th>
                 </tr>
                 </thead>
@@ -40,6 +44,9 @@
                         <td>{{ ticket.prioridad }}</td>
                         <td>{{ ticket.fecha_apertura|date:"d M Y" }}</td>
                         <td>{% if ticket.encargado %} {{ ticket.encargado.empleado }} {% else %} ------ {% endif %}</td>
+                        {% if tickets_aplazados_active %}
+                            <td>{{ ticket.fecha_aplazo }}</td>
+                        {% endif %}
                         <td><a href="{% url 'ticket:detail' ticket.id %}" class="btn btn-primary btn-sm" role="button">Ver Detalles</a></td>
                     </tr>
                 {% endfor %}

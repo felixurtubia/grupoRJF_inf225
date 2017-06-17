@@ -25,7 +25,7 @@
                 {% endif %}>
                         <td>{{ tdata }}</td>
                         <td>{{ tdata.data_text }}<td>
-                        {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                        {% if ticket.encargado == user %}
                             <td>
                             {% if not tdata.visada %}
                                 <a href="{% url 'ticket:visar_data_text' tdata.id ticket.id %}">
@@ -58,7 +58,7 @@
                                 </button>
                             </a>
                         </td>
-                    {% if user.empleado.perfil == 'supervisor' or ticket.encargado == user %}
+                        {% if ticket.encargado == user %}
                             <td>
                             {% if not fdata.visada %}
                                 <a href="{% url 'ticket:visar_data_file' fdata.id ticket.id %}">
@@ -75,7 +75,7 @@
                             {% endif %}
                             </td>
                         {% endif %}
-
+                    <td></td>
                     </tr>
                 {% endfor %}
                 </tbody>

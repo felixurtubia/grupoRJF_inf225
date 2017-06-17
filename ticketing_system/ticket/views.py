@@ -3,9 +3,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout, models
 from .models import Ticket, Empleado, TextData, FileData
 from django.db.models import Q
-from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm, VinculoForm
+from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm, VinculoForm, AplazarForm
 from django.contrib.auth.models import User
-from datetime import datetime
+from datetime import datetime, date
 
 # tipo de archivo permitido para cargar la data
 
@@ -14,11 +14,14 @@ DATA_FILE_TYPES = ['png', 'jpg', 'jpeg', 'xls', 'xlsx', 'word', 'wordx', 'pdf']
 
 # pagina principal de cada usuario logeado
 def index(request):
+    context = {'tickets_active': 'active', 'mis_tickets_active': '', 'tickets_cerrados_active': '',
+               'tickets_eliminados_active': '', 'tickets_no_asignados_active': '', 'tickets_aplazados_active': ''}
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
-        tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
+        context['tickets'] = Ticket.objects.filter(cerrado=False, eliminado=False, aplazado=False)
+        context['base'] = 'ticket/' + request.user.empleado.perfil + '/base.html'
+        return render(request, 'ticket/index.html', context)
 
 
 # se aplican filtros para la lista de los tickets y se envia a index
@@ -26,19 +29,28 @@ def vista(request, tag=''):
     if not request.user.is_authenticated():
         return render(request, 'ticket/login.html')
     else:
+        context = {'tickets_active': '', 'mis_tickets_active': '', 'tickets_cerrados_active': '',
+                   'tickets_eliminados_active': '', 'tickets_no_asignados_active': '', 'tickets_aplazados_active':''}
+        context['base'] = 'ticket/' + request.user.empleado.perfil + '/base.html'
         if tag == 'mis_tickets':
-            tickets = Ticket.objects.filter(cerrado=False, eliminado=False, encargado=request.user)
+            context['tickets'] = Ticket.objects.filter(cerrado=False, eliminado=False, aplazado=False, encargado=request.user)
+            context['mis_tickets_active'] = 'active'
         elif tag == 'cerrados':
-            tickets = Ticket.objects.filter(cerrado=True, eliminado=False)
+            context['tickets'] = Ticket.objects.filter(cerrado=True, eliminado=False, aplazado=False)
+            context['tickets_cerrados_active'] = 'active'
         elif tag == 'eliminados':
-            tickets = Ticket.objects.filter(eliminado=True)
+            context['tickets'] = Ticket.objects.filter(eliminado=True, aplazado=False)
+            context['tickets_eliminados_active'] = 'active'
         elif tag == 'no_asignados':
-            tickets = Ticket.objects.filter(cerrado=False, eliminado=False, asignado=False)
+            context['tickets'] = Ticket.objects.filter(cerrado=False, eliminado=False, asignado=False, aplazado=False)
+            context['tickets_no_asignados_active'] = 'active'
         elif tag == 'aplazados':
-            tickets = Ticket.objects.filter(cerrado=False, eliminado=False, aplazado=True)
+            context['tickets'] = Ticket.objects.filter(cerrado=False, eliminado=False, aplazado=True)
+            context['tickets_aplazados_active'] = 'active'
+            context['tiempo_aplazo_display'] = True
         else:
-            tickets = Ticket.objects.filter(cerrado=False, eliminado=False)
-        return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
+            context['tickets'] = Ticket.objects.filter(cerrado=False, eliminado=False, aplazado=False)
+        return render(request, 'ticket/index.html', context)
 
 
 # detalle de un ticket, recibe el usuario y el id del ticket
@@ -110,6 +122,22 @@ def accion(request, ticket_id, accion):
                     'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
                 }
                 return render(request, 'ticket/create_vinculo.html', context)
+            elif accion == 'aplazar':
+                form = AplazarForm(request.POST or None)
+                ticket = get_object_or_404(Ticket, pk=ticket_id)
+                if form.is_valid():
+                    fecha = form.cleaned_data['fecha_aplazo']
+                    ticket.fecha_aplazo = fecha
+                    ticket.tiempo_restante_aplazo = fecha - date.today()
+                    ticket.aplazado=True
+                    ticket.save()
+                    return redirect('ticket:detail', ticket_id)
+                context = {
+                    'ticket': ticket,
+                    'form': form,
+                    'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
+                }
+                return render(request, 'ticket/create_aplazar.html', context)
             else:
                 redirect('ticket:index')
 
@@ -214,8 +242,9 @@ def create_file_data(request, ticket_id):
                 'ticket': ticket,
                 'form': form,
                 'error_message': 'Tipo de archivo debe ser pdf, word, excel, jpg, jpeg, png',
+                'base': 'ticket/' + request.user.empleado.perfil + '/base.html',
             }
-            return render(request, 'ticket/' + request.user.empleado.perfil + '/create_data_file.html', context)
+            return render(request, 'ticket/create_data_file.html', context)
 
         data.save()
         return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
@@ -223,7 +252,7 @@ def create_file_data(request, ticket_id):
     context = {
         'ticket': ticket,
         'form': form,
-        'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
+        'base': 'ticket/' + request.user.empleado.perfil + '/base.html',
     }
     return render(request, 'ticket/create_data_file.html', context)
 
@@ -253,8 +282,9 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                tickets = Ticket.objects.filter(eliminado=False, cerrado=False)
-                return render(request, 'ticket/' + request.user.empleado.perfil + '/index.html', {'tickets': tickets})
+                tickets = Ticket.objects.filter(eliminado=False, cerrado=False, aplazado=False)
+                return render(request, 'ticket/index.html', {'tickets': tickets,
+                                                             'base': 'ticket/' + request.user.empleado.perfil + '/base.html'})
             else:
                 return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido deshabilitada.'})
         else:

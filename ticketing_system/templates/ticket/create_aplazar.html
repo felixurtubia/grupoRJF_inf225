@@ -1,0 +1,51 @@
+{% extends base %}
+{% block title %}Aplazar{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        {% include 'ticket/elementos/detalles_ticket.html' %}
+        {% block detalles_ticket %}
+        {% endblock detalles_ticket %}
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">Ver Todo</a></li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Aplazar el Ticket</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="ticket" value="{{ ticket.id }}">
+                        <label for="fecha_aplazo"> Indique la fecha (YY-MM-DD):</label>
+                        {% include 'ticket/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Aplazar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    {% include 'ticket/elementos/vinculos_ticket.html' %}
+    {% block vinculos_ticket %}
+    {% endblock vinculos_ticket %}
+
+</div>
+
+{% endblock %}
