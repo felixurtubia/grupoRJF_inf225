@@ -17,6 +17,6 @@ Los modelos se encuentran en dos diferentes zip, estos son los proyectos de mode
 
 Requerimientos no fucionales implementados:
 
-Seguriada:
+Seguridad:
 	1.- Después de 30 minutos de inactividad la sesión se termina
 	2.- Al cerrar el navegador la sesión de termina
