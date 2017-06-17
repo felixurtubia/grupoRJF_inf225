@@ -21,6 +21,7 @@
                 <li role="presentation" class="active"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacion</a></li>
                 <li role="presentation" class="active"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
                 <li role="presentation" class="active"><a href="{% url 'ticket:accion' ticket.id 'vincular'%}">Vincular</a> </li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:accion' ticket.id 'aplazar' %}">Aplazar</a></li>
                 {% if not ticket.cerrado %}
                     <li role="presentation" class="active" ><a href="{% url 'ticket:accion' ticket.id 'cerrar' %}" style="background-color: #F2B2A7">Cerrar Ticket</a></li>
                 {% endif %}

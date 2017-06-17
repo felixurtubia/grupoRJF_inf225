@@ -18,8 +18,8 @@
 
             <ul class="nav nav-pills" style="margin-bottom: 10px;">
                 <li role="presentation" class="active"><a href="{% url 'ticket:detail' ticket.id %}">Ver todo</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacion</a></li>
-                <li role="presentation"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:create_text_data' ticket.id %}">Agregar observacion</a></li>
+                <li role="presentation" class="active"><a href="{% url 'ticket:create_file_data' ticket.id %}">Agregar archivo</a></li>
 
             </ul>
 

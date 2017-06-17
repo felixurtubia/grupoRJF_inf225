@@ -14,3 +14,9 @@ Para ingresar como administrador, entra en localhost:8000/admin/ :
 - **Pass** : asdf1234
 
 Los modelos se encuentran en dos diferentes zip, estos son los proyectos de modelio.
+
+Requerimientos no fucionales implementados:
+
+Seguriada:
+	1.- Después de 30 minutos de inactividad la sesión se termina
+	2.- Al cerrar el navegador la sesión de termina

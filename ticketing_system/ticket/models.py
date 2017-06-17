@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import Permission, User
-from datetime import datetime
+from datetime import datetime, date
 
 
 class Empleado(models.Model):
@@ -40,7 +40,9 @@ class Ticket(models.Model):
     fecha_cierre = models.DateField(null=True)
     # Estados
     cerrado = models.BooleanField(default=False)
-    fecha_aplazo = models.DateField(null=True)
+    aplazado = models.BooleanField(default=False)
+    fecha_aplazo = models.DateField(null=True, default = date.today())
+    tiempo_restante_aplazo = models.DurationField(null=True)
     asignado = models.BooleanField(default=False)
     eliminado = models.BooleanField(default=False)
 
