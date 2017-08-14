@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login, logout, models
-from .models import Ticket, Empleado, TextData, FileData
+from django.contrib.auth import authenticate, login, logout
+from .models import Ticket, TextData, FileData
 from django.db.models import Q
 from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm, VinculoForm, AplazarForm
 from django.contrib.auth.models import User
@@ -63,7 +63,7 @@ def detail(request, ticket_id):
         if str(request.user.empleado.perfil) == 'supervisor' or str(request.user.empleado.perfil) == 'jefe':
             operadores = User.objects.filter(empleado__perfil='operador')
             return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
-                          {'ticket': ticket, 'operadores': operadores})
+                          {'ticket': ticket, 'operadores': operadores, 'permisos': 'supervisor'})
         else:
             return render(request, 'ticket/' + request.user.empleado.perfil + '/detail.html',
                           {'ticket': ticket, 'user': user})
@@ -108,10 +108,36 @@ def accion(request, ticket_id, accion):
                 ticket.eliminado = False
                 ticket.save()
                 return redirect('ticket:detail', ticket_id)
+            elif accion == 'editar':
+                ticket = get_object_or_404(Ticket, pk=ticket_id)
+                form = TicketForm(request.POST or None, instance=ticket)
+                if form.is_valid():
+                    ticket = form.save(commit=False)
+                    ticket.asunto = request.POST['asunto']
+                    ticket.contenido = request.POST['contenido']
+                    ticket.save()
+                    return redirect('ticket:detail', ticket_id)
+                context = {
+                    'ticket': ticket,
+                    'form': form,
+                    'base': 'ticket/' + request.user.empleado.perfil + '/base.html'
+                }
+                return render(request, 'ticket/editar.html', context)
+
             elif accion == 'vincular':
                 form = VinculoForm(request.POST or None)
                 ticket = get_object_or_404(Ticket, pk=ticket_id)
                 if form.is_valid():
+                    if form.cleaned_data["ticket_padre"] == ticket:
+                        form = VinculoForm(request.POST or None)
+                        context = {
+                            'ticket': ticket,
+                            'form': form,
+                            'base': 'ticket/' + request.user.empleado.perfil + '/base.html',
+                            'error_message': "El ticket no puede ser vinculado a si mismo"
+                        }
+                        return render(request, 'ticket/create_vinculo.html', context)
+
                     vinculo = form.save(commit=False)
                     vinculo.ticket_hijo = ticket
                     vinculo.save()
@@ -129,7 +155,7 @@ def accion(request, ticket_id, accion):
                     fecha = form.cleaned_data['fecha_aplazo']
                     ticket.fecha_aplazo = fecha
                     ticket.tiempo_restante_aplazo = fecha - date.today()
-                    ticket.aplazado=True
+                    ticket.aplazado = True
                     ticket.save()
                     return redirect('ticket:detail', ticket_id)
                 context = {
@@ -205,6 +231,7 @@ def no_visar_file(request, data_id, ticket_id):
                           {'ticket': ticket, 'operadores': operadores, 'user': request.user})
         else:
             return redirect('ticket:index')
+
 
 # crear un ticket, crea una forma y la muestra en un template
 def create_ticket(request):
@@ -283,8 +310,8 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 tickets = Ticket.objects.filter(eliminado=False, cerrado=False, aplazado=False)
-                return render(request, 'ticket/index.html', {'tickets': tickets,
-                                                             'base': 'ticket/' + request.user.empleado.perfil + '/base.html'})
+                return render(request, 'ticket/index.html',
+                              {'tickets': tickets, 'base': 'ticket/' + request.user.empleado.perfil + '/base.html'})
             else:
                 return render(request, 'ticket/login.html', {'error_message': 'Tu cuenta ha sido deshabilitada.'})
         else:
@@ -299,5 +326,3 @@ def logout_user(request):
         "form": form,
     }
     return render(request, 'ticket/login.html', context)
-
-
