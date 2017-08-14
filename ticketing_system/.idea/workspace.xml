@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7912e21b-a1de-4ed0-9d76-1f49480267b7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticket/editar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html" afterPath="$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/jefe/base.html" afterPath="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/operador/detail.html" afterPath="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/views.py" afterPath="$PROJECT_DIR$/ticket/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,148 +19,158 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ticket/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="185" column="23" lean-forward="true" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
-              <folding>
-                <element signature="e#24#88#0" expanded="true" />
-                <marker date="1497670781000" expanded="true" signature="13346:13481" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="13346:13604" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="13346:13652" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="13680:13843" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="13758:13785" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ticket/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2227:2254" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2301:2771" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2811:3078" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3115:3442" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3489:4217" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4264:4495" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4526:4660" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4633:4660" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4692:4955" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4924:4955" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="4987:5255" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="5224:5255" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="5286:5568" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="5540:5568" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="16" />
-              <folding>
-                <marker date="1497670781000" expanded="true" signature="1136:1491" ph="{% if not ticket.cerrado ... %}" />
-                <marker date="1497670781000" expanded="false" signature="1414:1439" ph="..." />
-                <marker date="1497670781000" expanded="false" signature="1653:1678" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="1746:1978" ph="{% if not ticket.eliminado ... %}" />
-                <marker date="1497670781000" expanded="false" signature="1900:1924" ph="..." />
-                <marker date="1497670781000" expanded="false" signature="2146:2170" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2294:2939" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2390:2913" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2489:2738" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2523:2701" ph="{% for operador in operadores ... %}" />
-                <marker date="1497670781000" expanded="true" signature="2991:3639" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3087:3613" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3186:3435" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3220:3398" ph="{% for operador in operadores ... %}" />
-                <marker date="1497670781000" expanded="true" signature="3755:3813" ph="{% block data_ticket ... %}" />
-                <marker date="1497670781000" expanded="true" signature="3904:3966" ph="{% block vinculos_ticket ... %}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_data_file.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/create_data_file.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
-              <folding>
-                <marker date="1497670781000" expanded="true" signature="1130:1485" ph="{% if not ticket.cerrado ... %}" />
-                <marker date="1497670781000" expanded="false" signature="1408:1433" ph="..." />
-                <marker date="1497670781000" expanded="false" signature="1647:1672" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="1740:1972" ph="{% if not ticket.eliminado ... %}" />
-                <marker date="1497670781000" expanded="false" signature="1894:1918" ph="..." />
-                <marker date="1497670781000" expanded="false" signature="2140:2164" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2288:2933" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2384:2907" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2483:2732" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="2517:2695" ph="{% for operador in operadores ... %}" />
-                <marker date="1497670781000" expanded="true" signature="2985:3633" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3081:3607" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3180:3429" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="3214:3392" ph="{% for operador in operadores ... %}" />
-                <marker date="1497670781000" expanded="true" signature="3749:3807" ph="{% block data_ticket ... %}" />
-                <marker date="1497670781000" expanded="true" signature="3898:3960" ph="{% block vinculos_ticket ... %}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ticket/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-                <marker date="1497670781000" expanded="true" signature="697:766" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="714:766" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="801:949" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="877:949" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="988:1134" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="1077:1134" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="1173:1260" ph="..." />
-                <marker date="1497670781000" expanded="true" signature="1190:1260" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_vinculo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ticket/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+                  <folding>
+                    <element signature="e#0#32#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ticket/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="494">
+                  <caret line="167" column="40" lean-forward="true" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#24#88#0" expanded="true" />
+                    <element signature="e#613#1174#0" expanded="false" />
+                    <element signature="e#1275#2904#0" expanded="false" />
+                    <element signature="e#3001#3733#0" expanded="false" />
+                    <element signature="e#4198#4486#0" expanded="false" />
+                    <element signature="e#4540#4763#0" expanded="false" />
+                    <element signature="e#4816#5032#0" expanded="false" />
+                    <element signature="e#5088#5315#0" expanded="false" />
+                    <element signature="e#5372#5592#0" expanded="false" />
+                    <element signature="e#6407#7584#0" expanded="false" />
+                    <element signature="e#7639#8384#0" expanded="false" />
+                    <element signature="e#8545#9240#0" expanded="false" />
+                    <element signature="e#9295#9991#0" expanded="false" />
+                    <element signature="e#10043#10738#0" expanded="false" />
+                    <element signature="e#10793#11492#0" expanded="false" />
+                    <element signature="e#12352#13489#0" expanded="false" />
+                    <element signature="e#13538#14057#0" expanded="false" />
+                    <element signature="e#14978#15136#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="editar.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/editar.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ticket/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="339">
+                  <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#0#28#0" expanded="true" />
+                    <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ticket/forms.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="495">
+                  <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#24#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/base.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="466">
+                  <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="293">
+                  <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+                  <folding>
+                    <marker date="1502726481000" expanded="true" signature="1084:1439" ph="{% if not ticket.cerrado ... %}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detalles_ticket.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="create_ticket.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/create_ticket.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/ticket/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="541">
+                  <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,6 +179,11 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>block</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -183,26 +205,28 @@
         <option value="$PROJECT_DIR$/templates/ticket/operador/index.html" />
         <option value="$PROJECT_DIR$/templates/ticket/login.html" />
         <option value="$PROJECT_DIR$/ticketing_system/urls.py" />
-        <option value="$PROJECT_DIR$/ticket/urls.py" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/create_data_file.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/no_asignados.html" />
         <option value="$PROJECT_DIR$/templates/ticket/detalles_ticket.html" />
         <option value="$PROJECT_DIR$/templates/ticket/vinculos_ticket.html" />
         <option value="$PROJECT_DIR$/templates/ticket/create_vinculo.html" />
         <option value="$PROJECT_DIR$/templates/ticket/create_data_file.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
         <option value="$PROJECT_DIR$/ticketing_system/settings.py" />
         <option value="$PROJECT_DIR$/templates/ticket/elementos/data_ticket.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/index.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/detail.html" />
         <option value="$PROJECT_DIR$/ticket/models.py" />
         <option value="$PROJECT_DIR$/templates/ticket/create_aplazar.html" />
         <option value="$PROJECT_DIR$/ticket/forms.py" />
         <option value="$PROJECT_DIR$/templates/ticket/supervisor/index.html" />
         <option value="$PROJECT_DIR$/templates/ticket/index.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/operador/detail.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/supervisor/detail.html" />
+        <option value="$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html" />
+        <option value="$PROJECT_DIR$/ticket/urls.py" />
+        <option value="$PROJECT_DIR$/templates/ticket/editar.html" />
         <option value="$PROJECT_DIR$/ticket/views.py" />
       </list>
     </option>
@@ -214,8 +238,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="-241" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,26 +259,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="ticketing_system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ticketing_system" />
@@ -331,50 +344,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="operador" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jefe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketing_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="elementos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -382,7 +351,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,41 +601,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13365282" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18072289" sideWeight="0.5028612" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18072289" sideWeight="0.49713877" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24578314" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17596567" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2019802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24578314" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17453505" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,13 +638,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ticket/static/ticket/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ticket/static/ticket/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -704,20 +652,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2227:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2301:2771" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2811:3078" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3115:3442" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3489:4217" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4264:4495" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4526:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4633:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4692:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4924:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4987:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5224:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5286:5568" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5540:5568" ph="..." />
           </folding>
         </state>
       </provider>
@@ -729,20 +663,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2227:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2301:2771" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2811:3078" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3115:3442" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3489:4217" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4264:4495" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4526:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4633:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4692:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4924:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4987:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5224:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5286:5568" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5540:5568" ph="..." />
           </folding>
         </state>
       </provider>
@@ -753,14 +673,6 @@
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <marker date="1497670781000" expanded="true" signature="697:766" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="714:766" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="801:949" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="877:949" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="988:1134" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1077:1134" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1173:1260" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1190:1260" ph="..." />
           </folding>
         </state>
       </provider>
@@ -797,11 +709,23 @@
           <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
           <folding>
             <element signature="e#24#88#0" expanded="true" />
-            <marker date="1497670781000" expanded="true" signature="13346:13481" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13346:13604" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13346:13652" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13680:13843" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13758:13785" ph="..." />
+            <element signature="e#613#1174#0" expanded="false" />
+            <element signature="e#1275#2904#0" expanded="false" />
+            <element signature="e#3001#3733#0" expanded="false" />
+            <element signature="e#4198#4486#0" expanded="false" />
+            <element signature="e#4540#4763#0" expanded="false" />
+            <element signature="e#4816#5032#0" expanded="false" />
+            <element signature="e#5088#5315#0" expanded="false" />
+            <element signature="e#5372#5592#0" expanded="false" />
+            <element signature="e#6407#7584#0" expanded="false" />
+            <element signature="e#7639#8384#0" expanded="false" />
+            <element signature="e#8545#9240#0" expanded="false" />
+            <element signature="e#9295#9991#0" expanded="false" />
+            <element signature="e#10043#10738#0" expanded="false" />
+            <element signature="e#10793#11492#0" expanded="false" />
+            <element signature="e#12352#13489#0" expanded="false" />
+            <element signature="e#13538#14057#0" expanded="false" />
+            <element signature="e#14978#15136#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/base_visitante.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="115" lean-forward="false" selection-start-line="31" selection-start-column="115" selection-end-line="31" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/operador/mis_tickets.html" />
     <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/no_asignados.html" />
     <entry file="file://$PROJECT_DIR$/ticket/static/ticket/js/main.js">
@@ -845,22 +762,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/operador/create_data_file.html" />
     <entry file="file://$PROJECT_DIR$/ticket/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -875,42 +778,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/no_asignados.html" />
-    <entry file="file://$PROJECT_DIR$/templates/ticket/create_ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="65" lean-forward="false" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/create_data_file.html" />
-    <entry file="file://$PROJECT_DIR$/ticket/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/operador/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="33" column="100" lean-forward="true" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/vinculos_ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -919,13 +791,6 @@
         <state relative-caret-position="315">
           <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -944,65 +809,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/data_ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/index.html" />
-    <entry file="file://$PROJECT_DIR$/templates/ticket/form_template.html">
+    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/index.html" />
+    <entry file="file://$PROJECT_DIR$/templates/ticket/create_data_file.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="14" />
+        <state relative-caret-position="15">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/forms.py">
+    <entry file="file://$PROJECT_DIR$/ticket/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1497670781000" expanded="true" signature="697:766" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="714:766" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="801:949" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="877:949" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="988:1134" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1077:1134" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1173:1260" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1190:1260" ph="..." />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/base_visitante.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="115" lean-forward="false" selection-start-line="31" selection-start-column="115" selection-end-line="31" selection-end-column="115" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,111 +846,177 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+        <state relative-caret-position="225">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
             <marker date="1497670781000" expanded="true" signature="1130:1485" ph="{% if not ticket.cerrado ... %}" />
-            <marker date="1497670781000" expanded="false" signature="1408:1433" ph="..." />
-            <marker date="1497670781000" expanded="false" signature="1647:1672" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1740:1972" ph="{% if not ticket.eliminado ... %}" />
-            <marker date="1497670781000" expanded="false" signature="1894:1918" ph="..." />
-            <marker date="1497670781000" expanded="false" signature="2140:2164" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2288:2933" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2384:2907" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2483:2732" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2517:2695" ph="{% for operador in operadores ... %}" />
-            <marker date="1497670781000" expanded="true" signature="2985:3633" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3081:3607" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3180:3429" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3214:3392" ph="{% for operador in operadores ... %}" />
-            <marker date="1497670781000" expanded="true" signature="3749:3807" ph="{% block data_ticket ... %}" />
-            <marker date="1497670781000" expanded="true" signature="3898:3960" ph="{% block vinculos_ticket ... %}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/index.html" />
+    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/vinculos_ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/form_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/jefe/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="46" lean-forward="true" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/create_vinculo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/data_ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="16" />
+        <state relative-caret-position="293">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
           <folding>
-            <marker date="1497670781000" expanded="true" signature="1136:1491" ph="{% if not ticket.cerrado ... %}" />
-            <marker date="1497670781000" expanded="false" signature="1414:1439" ph="..." />
-            <marker date="1497670781000" expanded="false" signature="1653:1678" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="1746:1978" ph="{% if not ticket.eliminado ... %}" />
-            <marker date="1497670781000" expanded="false" signature="1900:1924" ph="..." />
-            <marker date="1497670781000" expanded="false" signature="2146:2170" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2294:2939" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2390:2913" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2489:2738" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2523:2701" ph="{% for operador in operadores ... %}" />
-            <marker date="1497670781000" expanded="true" signature="2991:3639" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3087:3613" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3186:3435" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3220:3398" ph="{% for operador in operadores ... %}" />
-            <marker date="1497670781000" expanded="true" signature="3755:3813" ph="{% block data_ticket ... %}" />
-            <marker date="1497670781000" expanded="true" signature="3904:3966" ph="{% block vinculos_ticket ... %}" />
+            <marker date="1502726481000" expanded="true" signature="1084:1439" ph="{% if not ticket.cerrado ... %}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/create_data_file.html">
+    <entry file="file://$PROJECT_DIR$/ticket/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/elementos/detalles_ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/create_ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="541">
           <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1497670781000" expanded="true" signature="1871:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2227:2254" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2301:2771" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="2811:3078" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3115:3442" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="3489:4217" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4264:4495" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4526:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4633:4660" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4692:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4924:4955" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="4987:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5224:5255" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5286:5568" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="5540:5568" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ticket/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="185" column="23" lean-forward="true" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
+        <state relative-caret-position="494">
+          <caret line="167" column="40" lean-forward="true" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
           <folding>
             <element signature="e#24#88#0" expanded="true" />
-            <marker date="1497670781000" expanded="true" signature="13346:13481" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13346:13604" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13346:13652" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13680:13843" ph="..." />
-            <marker date="1497670781000" expanded="true" signature="13758:13785" ph="..." />
+            <element signature="e#613#1174#0" expanded="false" />
+            <element signature="e#1275#2904#0" expanded="false" />
+            <element signature="e#3001#3733#0" expanded="false" />
+            <element signature="e#4198#4486#0" expanded="false" />
+            <element signature="e#4540#4763#0" expanded="false" />
+            <element signature="e#4816#5032#0" expanded="false" />
+            <element signature="e#5088#5315#0" expanded="false" />
+            <element signature="e#5372#5592#0" expanded="false" />
+            <element signature="e#6407#7584#0" expanded="false" />
+            <element signature="e#7639#8384#0" expanded="false" />
+            <element signature="e#8545#9240#0" expanded="false" />
+            <element signature="e#9295#9991#0" expanded="false" />
+            <element signature="e#10043#10738#0" expanded="false" />
+            <element signature="e#10793#11492#0" expanded="false" />
+            <element signature="e#12352#13489#0" expanded="false" />
+            <element signature="e#13538#14057#0" expanded="false" />
+            <element signature="e#14978#15136#0" expanded="false" />
           </folding>
         </state>
       </provider>

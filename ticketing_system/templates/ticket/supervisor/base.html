@@ -30,31 +30,37 @@
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="{% block tickets_active %}{% endblock %}">
-                    <a href="{% url 'ticket:index' %}">
-                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp; Tickets
-                    </a>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Vistas<span class = "caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="{% block tickets_active %}{% endblock %}">
+                            <a href="{% url 'ticket:index' %}">
+                                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>&nbsp; Tickets Abiertos
+                            </a>
+                        </li>
+                        <li class="{% block tickets_no_asignados_active %}{% endblock %}">
+                            <a href="{% url 'ticket:vista' 'no_asignados'%}">
+                                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets no Asignados
+                            </a>
+                        </li>
+                        <li class="{% block tickets_cerrados_active %}{% endblock %}">
+                            <a href="{% url 'ticket:vista' 'cerrados' %}">
+                                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Cerrados
+                            </a>
+                        </li>
+                        <li class="{% block tickets_eliminados_active %}{% endblock %}">
+                            <a href="{% url 'ticket:vista' 'eliminados' %}">
+                                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Eliminados
+                            </a>
+                        </li>
+                        <li class="{% block tickets_aplazados_active %}{% endblock %}">
+                            <a href="{% url 'ticket:vista' 'aplazados' %}">
+                                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Aplazados
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="{% block tickets_no_asignados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:vista' 'no_asignados'%}">
-                        <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets no Asignados
-                    </a>
-                </li>
-                <li class="{% block tickets_cerrados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:vista' 'cerrados' %}">
-                        <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Cerrados
-                    </a>
-                </li>
-                <li class="{% block tickets_eliminados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:vista' 'eliminados' %}">
-                        <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Eliminados
-                    </a>
-                </li>
-                <li class="{% block tickets_aplazados_active %}{% endblock %}">
-                    <a href="{% url 'ticket:vista' 'aplazados' %}">
-                        <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Tickets Aplazados
-                    </a>
-                </li>
+
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'ticket:index' %}">
                 <div class="form-group">
