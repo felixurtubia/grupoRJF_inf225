@@ -2,13 +2,13 @@ body {
     background: white url("images/background.png");
 }
 
-ul.errorlist {
+/*ul.errorlist {
     padding-left: 0;
 }
 
 ul.errorlist > li {
     list-style: none;
-}
+}*/
 
 .navbar {
     border-radius: 0;
@@ -25,4 +25,11 @@ ul.errorlist > li {
 
 .glyphicon-star.active {
     color: #FDB230;
+}
+
+.scrollable-menu {
+    height:auto;
+    max-height: 800%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

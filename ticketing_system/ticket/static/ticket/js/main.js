@@ -55,6 +55,7 @@ var SongsListPage = {
 	}
 };
 
+
 $(document).ready(function() {
 	AlbumsListPage.init();
 	SongsListPage.init();

@@ -1,6 +1,7 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import Permission, User
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 
 class Empleado(models.Model):
@@ -9,7 +10,8 @@ class Empleado(models.Model):
     cargo = models.CharField(max_length=200)
     departamento = models.CharField(max_length=200)
     perfil = models.CharField(max_length=200, choices=(('operador', 'Operador'),
-                                                       ('supervisor', 'Supervisor'), ('jefe', 'Jefe')))
+                                                       ('supervisor', 'Supervisor'), ('jefe', 'Jefe'),
+                                                       ('administrador', 'Administrador')))
     direccion = models.CharField(max_length=200)
 
     def __str__(self):
@@ -26,7 +28,6 @@ class Guardia(models.Model):
         return "Guardia de %s, desde %s hasta %s.", self.designado.user.first_name, self.inicio, self.fin
 
 
-
 class Ticket(models.Model):
     titulo = models.CharField(max_length=100)
     asunto = models.CharField(max_length=300, null=True)
@@ -41,7 +42,7 @@ class Ticket(models.Model):
     # Estados
     cerrado = models.BooleanField(default=False)
     aplazado = models.BooleanField(default=False)
-    fecha_aplazo = models.DateField(null=True, default = date.today())
+    fecha_aplazo = models.DateTimeField(null=True, default=datetime.now)
     tiempo_restante_aplazo = models.DurationField(null=True)
     asignado = models.BooleanField(default=False)
     eliminado = models.BooleanField(default=False)
@@ -104,7 +105,7 @@ class Evento(models.Model):
     clase = models.CharField(max_length=200)
 
 
-#Tipo de Ticket
+# Tipo de Ticket
 class Trabajo(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     tipo = models.CharField(max_length=100)
@@ -115,7 +116,7 @@ class Trabajo(models.Model):
 
 class Keyword(models.Model):
     nombre = models.CharField(max_length=100)
-    ticket = models.ForeignKey(User)
+    ticket = models.ForeignKey(Ticket)
 
     def __str__(self):
         return self.nombre
@@ -148,3 +149,24 @@ class Vinculo(models.Model):
 
     def __str__(self):
         return self.vinculo
+
+
+class Notificacion(models.Model):
+    fecha = models.DateTimeField(default=datetime.now)
+    usuario_origen = models.ForeignKey(User, related_name='+')
+    usuario_destino = models.ForeignKey(User, related_name='notificaciones')
+    texto = models.TextField(max_length=200)
+    tipo = models.CharField(max_length=200, choices=(('TAsignado','Ticket asignado'), ('TCerrado','Ticket cerrado'),
+                                                     ('TAplazado','Ticket aplazado'), ('TCreado','Ticket creado'),
+                                                     ('TEliminado', 'Ticket eliminado'), ('TEditado','Ticket editado'),
+                                                     ('DCreada', 'Data nueva'), ('DAprobada', 'Data aprobada'),
+                                                     ('DRechazada', 'Data Rechazada'), ('TAbierto', 'Ticket abierto'),
+                                                     ('TRestaurado', 'Ticket restaurado'), ('TVinculado', "Ticket Vinculado")))
+    ticket = models.ForeignKey(
+        Ticket,
+        related_name='+',
+        null=True
+    )
+
+    def __str__(self):
+        return self.texto

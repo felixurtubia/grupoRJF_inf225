@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 #se importa la url del modulo ticket cuando se llama a ticket/ o a /
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin'),
-    url(r'^ticket/', include('ticket.urls')),
+    # url(r'^ticket/', include('ticket.urls')),
     url(r'^', include('ticket.urls')),
 ]
 
