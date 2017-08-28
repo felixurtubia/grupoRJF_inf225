@@ -24,13 +24,16 @@ urlpatterns = [
     url(r'^(?P<ticket_id>[0-9]+)/accion/(?P<accion>\w+)/$', views.accion, name='accion'),
 
     #visado o no visado de data de texto y archivos
-    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/visar_text', views.visar_text, name='visar_data_text'),
-    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/no_visar_text', views.no_visar_text, name='no_visar_data_text'),
-    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/visar_file', views.visar_file, name='visar_data_file'),
-    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/no_visar_file', views.no_visar_file, name='no_visar_data_file'),
+    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/visar_text$', views.visar_text, name='visar_data_text'),
+    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/no_visar_text$', views.no_visar_text, name='no_visar_data_text'),
+    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/visar_file$', views.visar_file, name='visar_data_file'),
+    url(r'^(?P<data_id>[0-9]+):(?P<ticket_id>[0-9]+)/no_visar_file$', views.no_visar_file, name='no_visar_data_file'),
 
     #creacion de data de texto o archivos
     url(r'^(?P<ticket_id>[0-9]+)/create_text_data/$', views.create_text_data, name='create_text_data'),
     url(r'^(?P<ticket_id>[0-9]+)/create_file_data/$', views.create_file_data, name='create_file_data'),
+
+    #Click en notificacion
+    url(r'^click_notificacion/(?P<notificacion_id>[0-9]+)/$', views.click_notificacion, name="click_notificacion")
 
 ]
