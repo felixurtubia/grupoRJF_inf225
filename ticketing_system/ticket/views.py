@@ -2,15 +2,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import Ticket, TextData, FileData, Notificacion
-from django.db.models import Q
-from .forms import TicketForm, KeywordForm, UserForm, TextDataForm, FileDataForm, VinculoForm, AplazarForm
+from .forms import TicketForm, UserForm, TextDataForm, FileDataForm, VinculoForm, AplazarForm
 from django.contrib.auth.models import User
 from datetime import datetime, date, timedelta
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.http import JsonResponse
+
+# REST Framework
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # tipo de archivo permitido para cargar la data
 
 DATA_FILE_TYPES = ['png', 'jpg', 'jpeg', 'xls', 'xlsx', 'word', 'wordx', 'pdf']
+
 
 # Funcion para crear notificaciones a usuarios
 def enviarNotificacion(grupo_destino, usuario_origen, texto, tipo, ticket):
@@ -26,6 +30,7 @@ def consultarNotificaciones(user):
         return notificaciones
     else:
         return []
+
 
 # pagina principal de cada usuario logeado
 def index(request):
@@ -399,3 +404,73 @@ def logout_user(request):
         "form": form,
     }
     return render(request, 'ticket/login.html', context)
+
+
+def estadisticas(request, *args, **kwargs):
+    context = {'notificaciones': consultarNotificaciones(request.user)}
+    context['base'] = 'ticket/' + request.user.empleado.perfil + '/base.html'
+
+    return render(request, 'ticket/charts.html', context)
+
+
+# Empieza el calculo de graficos
+def get_ticket_abierto_semana():
+    semanas = 8
+    labels = []
+    data = []
+    min_td = datetime.now() - timedelta(weeks=9)
+    max_td = min_td + timedelta(weeks=1)
+    for i in range(semanas):
+        min_td = min_td + timedelta(weeks=1)
+        max_td = max_td + timedelta(weeks=1)
+        temp = Ticket.objects.filter(fecha_apertura__range=(min_td, max_td))
+        data.append(temp.count())
+        temp2 = str(min_td.day)+'/'+str(min_td.month) + ' - ' + str(max_td.day) + '/' + str(max_td.month)
+        labels.append(temp2)
+    return {"values": data, "labels": labels}
+
+def get_ticket_cerrado_semana():
+    semanas = 8
+    labels = []
+    values = []
+    min_td = datetime.now() - timedelta(weeks=9)
+    max_td = min_td + timedelta(weeks=1)
+    for i in range(semanas):
+        min_td = min_td + timedelta(weeks=1)
+        max_td = max_td + timedelta(weeks=1)
+        temp = Ticket.objects.filter(fecha_cierre__range=(min_td, max_td))
+        values.append(temp.count())
+        temp2 = str(min_td.day)+'/'+str(min_td.month) + ' - ' + str(max_td.day) + '/' + str(max_td.month)
+        labels.append(temp2)
+    return {"values": values, "labels": labels}
+
+def get_ticket_creado_usuario():
+    labels = []
+    values = []
+    #min_td = datetime.now() - timedelta(weeks=8)
+    #max_td = datetime.now()
+    usuarios = User.objects.all()
+    usuarios1 = []
+    for usuario in usuarios:
+        if hasattr(usuario,"creador"):
+            usuarios1.append(usuario)
+    usuarios1.sort(key=lambda us: us.creador.count())
+    usuarios1 = usuarios1[:10]
+    for usuario in usuarios1:
+        labels.append(usuario.first_name + usuario.last_name)
+        values.append(usuario.creador.count())
+    return {"values": values, "labels": labels}
+
+
+class ChartData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+        data1 = get_ticket_abierto_semana()
+        data2 = get_ticket_cerrado_semana()
+        data3 = get_ticket_creado_usuario()
+        data = {"ta_label": data1["labels"], "ta_values": data1["values"],
+                "tc_label": data2["labels"], "tc_values": data2["values"],
+                "tu_label": data3["labels"], "tu_values": data3["values"]}
+        return Response(data)

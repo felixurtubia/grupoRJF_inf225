@@ -1,0 +1,127 @@
+{% extends base %}
+{%  block title %}Estadísticas {% endblock %}
+{%  block tickets_active %}active {% endblock %}
+
+<script>
+    {%  block jquery %}
+        var endpoint = '/api/chart/data/';
+        var defaultData = [];
+        var labels = [];
+        $.ajax({
+            method:"GET",
+            url: endpoint,
+            success: function(data){
+                console.log(data);
+                tas_label = data["ta_label"];
+                tcs_label = data["tc_label"];
+                tu_label = data["tu_label"];
+                tas_values = data["ta_values"];
+                tcs_values = data["tc_values"];
+                tu_values = data["tu_values"];
+                setChart();
+            },
+            error: function (error_data) {
+                console.log("error");
+                console.log(error_data)
+            }
+        });
+
+        function setChart(){
+            var tas = document.getElementById("ticket_abierto_semana").getContext('2d');
+            var tcs = document.getElementById("ticket_cerrado_semana").getContext('2d');
+            var tu = document.getElementById("ticket_usuario").getContext('2d');
+            var ticket_abierto_semana = new Chart(tas, {
+                type: 'line',
+                data: {
+                    labels: tas_label,
+                    datasets: [{
+                        label: 'Tickets creados por semana',
+                        data: tas_values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+            var ticket_cerrado_semana = new Chart(tcs, {
+                type: 'line',
+                data: {
+                    labels: tcs_label,
+                    datasets: [{
+                        label: 'Tickets cerrados por semana',
+                        data: tcs_values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+            var ticket_usuario = new Chart(tu, {
+                type: 'bar',
+                data: {
+                    labels: tu_label,
+                    datasets: [{
+                        label: 'Tickes creados por usuario',
+                        data: tu_values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+
+
+
+
+
+
+    {% endblock%}
+
+</script>
+
+{% block body %}
+    <div>
+        <div class="row1">
+            <div class="col-sm-6">
+                <canvas id="ticket_abierto_semana" width="400" height="400"></canvas>
+            </div>
+            <div class="col-sm-6">
+                <canvas id="ticket_cerrado_semana" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="col-sm-6">
+                <canvas id="ticket_usuario" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
