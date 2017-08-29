@@ -26,7 +26,8 @@ def enviarNotificacion(grupo_destino, usuario_origen, texto, tipo, ticket):
 def consultarNotificaciones(user):
     if hasattr(user, 'notificaciones'):
         min_td = datetime.now() - timedelta(minutes=10)
-        notificaciones = user.notificaciones.filter(fecha__gte=min_td)
+        notificaciones = list(user.notificaciones.filter(fecha__gte=min_td))
+        notificaciones.sort(key=lambda noti: noti.fecha, reverse=True)
         return notificaciones
     else:
         return []
@@ -131,6 +132,7 @@ def accion(request, ticket_id, accion):
                 ticket = get_object_or_404(Ticket, pk=ticket_id)
                 ticket.cerrador = request.user
                 ticket.cerrado = True
+                ticket.fecha_cierre = datetime.now()
                 ticket.save()
                 # Se crea notificacion a todos menos administradores
                 personas = User.objects.exclude(empleado__perfil='administrador')
@@ -438,7 +440,7 @@ def get_ticket_cerrado_semana():
     for i in range(semanas):
         min_td = min_td + timedelta(weeks=1)
         max_td = max_td + timedelta(weeks=1)
-        temp = Ticket.objects.filter(fecha_cierre__range=(min_td, max_td))
+        temp = Ticket.objects.filter(cerrado=True).filter(fecha_cierre__range=(min_td, max_td))
         values.append(temp.count())
         temp2 = str(min_td.day)+'/'+str(min_td.month) + ' - ' + str(max_td.day) + '/' + str(max_td.month)
         labels.append(temp2)
