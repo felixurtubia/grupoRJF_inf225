@@ -34,6 +34,9 @@ urlpatterns = [
     url(r'^(?P<ticket_id>[0-9]+)/create_file_data/$', views.create_file_data, name='create_file_data'),
 
     #Click en notificacion
-    url(r'^click_notificacion/(?P<notificacion_id>[0-9]+)/$', views.click_notificacion, name="click_notificacion")
+    url(r'^click_notificacion/(?P<notificacion_id>[0-9]+)/$', views.click_notificacion, name="click_notificacion"),
 
+    # Estadisticas
+    url(r'estadisticas/$', views.estadisticas, name='estadisticas'),
+    url(r'^api/chart/data/$', views.ChartData.as_view())
 ]
