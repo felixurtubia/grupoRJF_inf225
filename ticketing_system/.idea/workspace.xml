@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7912e21b-a1de-4ed0-9d76-1f49480267b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticket/charts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/jefe/base.html" afterPath="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/jefe/detail.html" afterPath="$PROJECT_DIR$/templates/ticket/jefe/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/operador/base.html" afterPath="$PROJECT_DIR$/templates/ticket/operador/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" afterPath="$PROJECT_DIR$/templates/ticket/supervisor/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/urls.py" afterPath="$PROJECT_DIR$/ticket/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket/views.py" afterPath="$PROJECT_DIR$/ticket/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticketing_system/settings.py" afterPath="$PROJECT_DIR$/ticketing_system/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,8 +70,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ticket/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="548">
-                  <caret line="412" column="56" lean-forward="false" selection-start-line="412" selection-start-column="56" selection-end-line="412" selection-end-column="56" />
+                <state relative-caret-position="44">
+                  <caret line="441" column="44" lean-forward="true" selection-start-line="441" selection-start-column="44" selection-end-line="441" selection-end-column="44" />
                   <folding>
                     <element signature="e#24#88#0" expanded="true" />
                   </folding>
@@ -122,35 +115,34 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ticket/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1505">
-                  <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+                <state relative-caret-position="458">
+                  <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
                   <folding>
                     <element signature="e#24#88#0" expanded="true" />
-                    <element signature="e#2057#3807#0" expanded="false" />
-                    <element signature="e#3904#4777#0" expanded="false" />
-                    <element signature="e#4855#5307#0" expanded="false" />
-                    <element signature="e#5445#12402#0" expanded="false" />
-                    <element signature="e#12501#13280#0" expanded="false" />
-                    <element signature="e#13335#14115#0" expanded="false" />
-                    <element signature="e#14167#14946#0" expanded="false" />
-                    <element signature="e#15001#15784#0" expanded="false" />
-                    <element signature="e#15878#16854#0" expanded="false" />
-                    <element signature="e#16903#18233#0" expanded="false" />
-                    <element signature="e#18282#18801#0" expanded="false" />
-                    <element signature="e#18833#19777#0" expanded="false" />
-                    <element signature="e#19810#19968#0" expanded="false" />
+                    <element signature="e#2134#3884#0" expanded="false" />
+                    <element signature="e#3981#4854#0" expanded="false" />
+                    <element signature="e#4932#5384#0" expanded="false" />
+                    <element signature="e#12631#13410#0" expanded="false" />
+                    <element signature="e#13465#14245#0" expanded="false" />
+                    <element signature="e#14297#15076#0" expanded="false" />
+                    <element signature="e#15131#15914#0" expanded="false" />
+                    <element signature="e#16008#16984#0" expanded="false" />
+                    <element signature="e#17033#18363#0" expanded="false" />
+                    <element signature="e#18412#18931#0" expanded="false" />
+                    <element signature="e#18963#19907#0" expanded="false" />
+                    <element signature="e#19940#20098#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="charts.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="charts.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/ticket/charts.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1082">
+                <state relative-caret-position="210">
                   <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
                   <folding />
                 </state>
@@ -160,8 +152,8 @@
           <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/ticket/operador/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="811">
-                  <caret line="91" column="10" lean-forward="true" selection-start-line="91" selection-start-column="10" selection-end-line="91" selection-end-column="10" />
+                <state relative-caret-position="705">
+                  <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -170,7 +162,7 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ticket/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
+                <state relative-caret-position="452">
                   <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
@@ -242,8 +234,8 @@
         <option value="$PROJECT_DIR$/ticket/models.py" />
         <option value="$PROJECT_DIR$/templates/ticket/charts.html" />
         <option value="$PROJECT_DIR$/templates/ticket/jefe/base.html" />
-        <option value="$PROJECT_DIR$/templates/ticket/operador/base.html" />
         <option value="$PROJECT_DIR$/ticket/urls.py" />
+        <option value="$PROJECT_DIR$/templates/ticket/operador/base.html" />
         <option value="$PROJECT_DIR$/ticket/views.py" />
       </list>
     </option>
@@ -764,6 +756,18 @@
           <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
           <folding>
             <element signature="e#24#88#0" expanded="true" />
+            <element signature="e#2134#3884#0" expanded="false" />
+            <element signature="e#3981#4854#0" expanded="false" />
+            <element signature="e#4932#5384#0" expanded="false" />
+            <element signature="e#12631#13410#0" expanded="false" />
+            <element signature="e#13465#14245#0" expanded="false" />
+            <element signature="e#14297#15076#0" expanded="false" />
+            <element signature="e#15131#15914#0" expanded="false" />
+            <element signature="e#16008#16984#0" expanded="false" />
+            <element signature="e#17033#18363#0" expanded="false" />
+            <element signature="e#18412#18931#0" expanded="false" />
+            <element signature="e#18963#19907#0" expanded="false" />
+            <element signature="e#19940#20098#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,17 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticket/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1503945001000" expanded="true" signature="2008:2391" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="613">
@@ -1020,14 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="91" column="10" lean-forward="true" selection-start-line="91" selection-start-column="10" selection-end-line="91" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/supervisor/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1046,20 +1031,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ticket/operador/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/charts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1082">
+        <state relative-caret-position="210">
           <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ticket/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1503945001000" expanded="true" signature="2008:2391" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ticket/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="412" column="56" lean-forward="false" selection-start-line="412" selection-start-column="56" selection-end-line="412" selection-end-column="56" />
+        <state relative-caret-position="458">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
             <element signature="e#24#88#0" expanded="true" />
+            <element signature="e#2134#3884#0" expanded="false" />
+            <element signature="e#3981#4854#0" expanded="false" />
+            <element signature="e#4932#5384#0" expanded="false" />
+            <element signature="e#12631#13410#0" expanded="false" />
+            <element signature="e#13465#14245#0" expanded="false" />
+            <element signature="e#14297#15076#0" expanded="false" />
+            <element signature="e#15131#15914#0" expanded="false" />
+            <element signature="e#16008#16984#0" expanded="false" />
+            <element signature="e#17033#18363#0" expanded="false" />
+            <element signature="e#18412#18931#0" expanded="false" />
+            <element signature="e#18963#19907#0" expanded="false" />
+            <element signature="e#19940#20098#0" expanded="false" />
           </folding>
         </state>
       </provider>
